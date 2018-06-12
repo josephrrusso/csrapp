@@ -6,6 +6,7 @@ import {MyApp} from './app.component';
 import {HttpModule, Http} from '@angular/http';
 import {AuthHttp, AuthConfig,JwtHelper} from 'angular2-jwt';
 import {Storage} from '@ionic/storage';
+import {GeoService} from '../providers/geo-service';
 import {AuthService} from '../providers/auth-service';
 import {ImageService} from '../providers/image-service';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
@@ -84,6 +85,7 @@ export function createTranslateLoader(http: Http) {
     FilePath,
     Camera,
     AuthService,
+    GeoService,
     ImageService,
 	GroupsService,
 	LocationsService,

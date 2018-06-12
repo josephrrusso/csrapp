@@ -4,8 +4,10 @@ import {IonicPage, NavController, NavParams, MenuController} from 'ionic-angular
 import {ProtectedPage} from '../../pages/protected-page/protected-page';
 import {Storage} from '@ionic/storage';
 import {CampaignsService} from '../../providers/campaigns-service';
+import {GeoService} from '../../providers/geo-service';
 import {CampaignsModel} from '../../models/campaigns.model';
 import { Geolocation } from '@ionic-native/geolocation';
+import { AlertController } from 'ionic-angular';
 
 declare var google;
 
@@ -27,7 +29,9 @@ export class CampaignsInfoPage extends ProtectedPage {
     public menuCtrl: MenuController,
     public storage: Storage,
     public campaignsService: CampaignsService,
-    public geolocation: Geolocation
+    public geoService: GeoService,
+    public geolocation: Geolocation,
+    public alertCtrl: AlertController
   ) {
 
     super(navCtrl, navParams, storage);
@@ -38,6 +42,51 @@ export class CampaignsInfoPage extends ProtectedPage {
 
   ionViewDidLoad(){
     this.loadMap();
+  }
+
+  geolocationFunction() {
+    
+    this.geolocation.getCurrentPosition().then((position) => {
+
+      this.geoService.geo({latitude: position.coords.latitude, longitude: position.coords.longitude})
+      .then()
+      .catch((e) => console.log("Add geo error", e));
+
+      //let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+ 
+      /*
+      let alert = this.alertCtrl.create({
+        title: 'Longitude',
+        subTitle: position.coords.longitude.toString(),
+        buttons: ['Dismiss']
+      });
+      alert.present();
+      */
+
+    }, (err) => {
+
+      this.geoService.geo({latitude: 0, longitude: 0})
+      .then()
+      .catch((e) => console.log("Add geo error", e));
+
+      /*
+      let alert = this.alertCtrl.create({
+        title: 'Longitude',
+        subTitle: 'No long',
+        buttons: ['Dismiss']
+      });
+      alert.present();
+      */
+    });
+    
+  }
+
+  ionViewDidEnter() {
+    setInterval(() => { 
+
+       this.geolocationFunction(); // Now the "this" still references the component
+       //console.log("catbaby")
+    }, 5000);
   }
  
   loadMap() {

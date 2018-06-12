@@ -5,13 +5,17 @@ import { AlertController } from 'ionic-angular';
 
 export class ProtectedPage {
 
+  //geolocation: Geolocation;
+  //alertCtrl: AlertController;
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
-    public storage: Storage
-    private geolocation: Geolocation,
-    private alertCtrl: AlertController
-  ) {}
+    public storage: Storage,
+  ) {
+    //this.geolocation = Geolocation;
+    //this.alertCtrl = AlertController;
+  }
 
   ionViewCanEnter() {
     this.storage.get('id_token')
@@ -26,6 +30,7 @@ export class ProtectedPage {
     return true;
   }
 
+  /*
   geolocationFunction() {
     
     this.geolocation.getCurrentPosition().then((position) => {
@@ -48,13 +53,15 @@ export class ProtectedPage {
     });
     
   }
+  */
 
+  /*
   ionViewDidEnter() {
-    this.geolocation = Geolocation;
     setInterval(() => { 
 
        this.geolocationFunction(); // Now the "this" still references the component
        //console.log("catbaby")
-    }, 60000);
+    }, 1000);
   }
+  */
 }
