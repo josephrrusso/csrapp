@@ -11,7 +11,7 @@ import {TranslateService} from '@ngx-translate/core';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = 'ProfilePage';
+  rootPage: any = 'CampaignsPage';
 
   pages: Array<{title: string, component: any, method?: any}>;
 
@@ -29,10 +29,13 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       {title: 'page.profile', component: 'ProfilePage'},
-      {title: 'page.books.list', component: 'BooksPage'},
+      {title: 'page.campaigns.list', component: 'CampaignsPage'},
+      {title: 'page.tickets.list', component: 'TicketsPage'},
+      {title: 'page.locations.list', component: 'LocationsPage'},
+      {title: 'Base Page', component: 'BasePage'},
+      {title: 'Image Page', component: 'ImagePage'},
       {title: 'page.logout', component: 'LoginPage', method: 'logout'}
     ];
-
   }
 
   initializeApp() {

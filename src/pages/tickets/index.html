@@ -1,0 +1,19 @@
+
+<style>
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.tickets.list' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <button ion-button block (click)="openPage('TicketsAddPage')">{{ 'button.add_ticket' | translate }}</button>
+  <ion-list *ngIf="tickets">
+    <button ion-item  *ngFor="let ticket of tickets" (click)="ticketInfo(ticket)">{{ ticket.first_name }} {{ ticket.last_name }}</button>
+  </ion-list>
+</ion-content>
+

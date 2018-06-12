@@ -1,0 +1,194 @@
+
+<style>
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.locations.preview' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngIf="location">
+    <ion-card-content>
+      <h1>{{ location.title }}</h1>
+      by {{ location.author_name }}, p. {{ location.pages_count }}
+      <ion-row>
+          <ion-col>
+            <h2>id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>active</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.active }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>status</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.status }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>created</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.created }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>modified</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.modified }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>created_epoch</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.created_epoch }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>modified_epoch</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.modified_epoch }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>owner</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.owner }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>ownerg</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.ownerg }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>organization_id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.organization_id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>location_type_id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.location_type_id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>name</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.name }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>latitude</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.latitude }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>longitude</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.longitude }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>last_contacted</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.last_contacted }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>campaign_id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.campaign_id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>first_name</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.first_name }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>last_name</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.last_name }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>polygons</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.polygons }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>geofence</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.geofence }}</span>
+          </ion-col>
+        </ion-row>
+          </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small color="secondary" (click)="editLocations(location)">
+          <ion-icon name="construct"></ion-icon>
+          <div>{{ 'button.edit' | translate }}</div>
+        </button>          
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button icon-left clear small color="danger" (click)="deleteLocations(location)">
+          <ion-icon name="trash"></ion-icon>
+          <div>{{ 'button.delete' | translate }}</div>
+        </button>          
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

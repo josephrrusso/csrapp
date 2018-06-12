@@ -1,10 +1,9 @@
 export let cfg = {
-  apiUrl: 'http://books.prodio.bg/api',
-  tokenName: 'token',
+  apiUrl: 'http://crowdsourcerescue.com/api/v1',
+  tokenName: 'id_token',
   user: {
-    register: '/auth/signup',
-    login: '/auth/login',
-    refresh:'/refresh',
-  },
-  books: '/books'
+    register: '/users/signup',
+    login: '/users/token',
+    refresh:'/users/token',
+  }
 };

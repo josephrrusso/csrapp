@@ -1,0 +1,138 @@
+
+<style>
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.notifications.preview' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngIf="notification">
+    <ion-card-content>
+      <h1>{{ notification.title }}</h1>
+      by {{ notification.author_name }}, p. {{ notification.pages_count }}
+      <ion-row>
+          <ion-col>
+            <h2>id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ notification.id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>active</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ notification.active }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>status</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ notification.status }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>created</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ notification.created }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>modified</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ notification.modified }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>created_epoch</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ notification.created_epoch }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>modified_epoch</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ notification.modified_epoch }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>notes</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ notification.notes }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>user_id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ notification.user_id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>title</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ notification.title }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>description</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ notification.description }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>type</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ notification.type }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>read_status</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ notification.read_status }}</span>
+          </ion-col>
+        </ion-row>
+          </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small color="secondary" (click)="editNotifications(notification)">
+          <ion-icon name="construct"></ion-icon>
+          <div>{{ 'button.edit' | translate }}</div>
+        </button>          
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button icon-left clear small color="danger" (click)="deleteNotifications(notification)">
+          <ion-icon name="trash"></ion-icon>
+          <div>{{ 'button.delete' | translate }}</div>
+        </button>          
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

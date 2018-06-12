@@ -1,0 +1,19 @@
+
+import {NgModule} from '@angular/core';
+import {IonicPageModule} from 'ionic-angular';
+import {FormsInfoPage} from './view';
+import {TranslateModule} from '@ngx-translate/core';
+
+@NgModule({
+  declarations: [
+    FormsInfoPage,
+  ],
+  imports: [
+    IonicPageModule.forChild(FormsInfoPage),
+    TranslateModule.forChild()
+  ],
+  exports: [
+    FormsInfoPage
+  ]
+})
+export class FormsInfoPageModule {}

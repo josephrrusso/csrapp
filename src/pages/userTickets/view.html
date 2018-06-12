@@ -1,0 +1,122 @@
+
+<style>
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.userTickets.preview' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngIf="userTicket">
+    <ion-card-content>
+      <h1>{{ userTicket.title }}</h1>
+      by {{ userTicket.author_name }}, p. {{ userTicket.pages_count }}
+      <ion-row>
+          <ion-col>
+            <h2>id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ userTicket.id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>active</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ userTicket.active }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>status</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ userTicket.status }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>created</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ userTicket.created }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>modified</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ userTicket.modified }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>created_epoch</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ userTicket.created_epoch }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>modified_epoch</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ userTicket.modified_epoch }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>owner</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ userTicket.owner }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>ownerg</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ userTicket.ownerg }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>user_id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ userTicket.user_id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>ticket_id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ userTicket.ticket_id }}</span>
+          </ion-col>
+        </ion-row>
+          </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small color="secondary" (click)="editUserTickets(userTicket)">
+          <ion-icon name="construct"></ion-icon>
+          <div>{{ 'button.edit' | translate }}</div>
+        </button>          
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button icon-left clear small color="danger" (click)="deleteUserTickets(userTicket)">
+          <ion-icon name="trash"></ion-icon>
+          <div>{{ 'button.delete' | translate }}</div>
+        </button>          
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

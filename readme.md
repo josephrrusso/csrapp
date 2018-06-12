@@ -23,3 +23,7 @@ Using this seed project, you'll have a working example of
 * Forgot password
 * Reset password
 * Update user profile
+
+### Commands
+This url: https://github.com/vmanchev/ionic3-seed-jwt.git
+To make with ionic: ionic start <projectname> https://github.com/vmanchev/ionic3-seed-jwt.git

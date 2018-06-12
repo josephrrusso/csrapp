@@ -1,0 +1,19 @@
+
+<style>
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.users.list' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <button ion-button block (click)="openPage('UsersAddPage')">{{ 'button.add_user' | translate }}</button>
+  <ion-list *ngIf="users">
+    <button ion-item  *ngFor="let user of users" (click)="userInfo(user)">{{ user.title }}</button>
+  </ion-list>
+</ion-content>
+

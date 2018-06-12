@@ -1,0 +1,194 @@
+
+<style>
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.organizations.preview' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngIf="organization">
+    <ion-card-content>
+      <h1>{{ organization.title }}</h1>
+      by {{ organization.author_name }}, p. {{ organization.pages_count }}
+      <ion-row>
+          <ion-col>
+            <h2>id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>active</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.active }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>status</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.status }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>created</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.created }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>modified</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.modified }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>created_epoch</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.created_epoch }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>modified_epoch</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.modified_epoch }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>owner</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.owner }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>ownerg</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.ownerg }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>organization_type_id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.organization_type_id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>name</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.name }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>last_contacted</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.last_contacted }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>latitude</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.latitude }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>longitude</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.longitude }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>organization_id_root</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.organization_id_root }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>organization_id_parent</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.organization_id_parent }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>first_name</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.first_name }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>last_name</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.last_name }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>polygons</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.polygons }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>security_profile_id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ organization.security_profile_id }}</span>
+          </ion-col>
+        </ion-row>
+          </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small color="secondary" (click)="editOrganizations(organization)">
+          <ion-icon name="construct"></ion-icon>
+          <div>{{ 'button.edit' | translate }}</div>
+        </button>          
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button icon-left clear small color="danger" (click)="deleteOrganizations(organization)">
+          <ion-icon name="trash"></ion-icon>
+          <div>{{ 'button.delete' | translate }}</div>
+        </button>          
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

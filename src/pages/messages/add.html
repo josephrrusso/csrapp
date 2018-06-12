@@ -1,0 +1,101 @@
+
+<style type="text/css">
+  
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.messages.add' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-grid>
+    <ion-row justify-content-around>
+      <ion-col col-sm-6 col-md-6 col-lg-4 col-xl-3  align-self-center>
+        <form [formGroup]="messageData" (ngSubmit)="process()">
+          <ion-item>
+            <ion-label floating>{{ 'label.id' | translate }}:</ion-label>
+            <ion-input type="number" formControlName="id"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.active' | translate }}:</ion-label>
+            <ion-input type="number" formControlName="active"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.status' | translate }}:</ion-label>
+            <ion-input type="text" formControlName="status"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.created' | translate }}:</ion-label>
+            <ion-input type="text" formControlName="created"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.modified' | translate }}:</ion-label>
+            <ion-input type="text" formControlName="modified"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.created_epoch' | translate }}:</ion-label>
+            <ion-input type="number" formControlName="created_epoch"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.modified_epoch' | translate }}:</ion-label>
+            <ion-input type="number" formControlName="modified_epoch"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.owner' | translate }}:</ion-label>
+            <ion-input type="number" formControlName="owner"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.ownerg' | translate }}:</ion-label>
+            <ion-input type="number" formControlName="ownerg"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.user_id' | translate }}:</ion-label>
+            <ion-input type="number" formControlName="user_id"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.organization_id' | translate }}:</ion-label>
+            <ion-input type="number" formControlName="organization_id"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.location_id' | translate }}:</ion-label>
+            <ion-input type="number" formControlName="location_id"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.ticket_id' | translate }}:</ion-label>
+            <ion-input type="number" formControlName="ticket_id"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.user_idr' | translate }}:</ion-label>
+            <ion-input type="number" formControlName="user_idr"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.organization_idr' | translate }}:</ion-label>
+            <ion-input type="number" formControlName="organization_idr"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.location_idr' | translate }}:</ion-label>
+            <ion-input type="number" formControlName="location_idr"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.ticket_idr' | translate }}:</ion-label>
+            <ion-input type="number" formControlName="ticket_idr"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.send_time' | translate }}:</ion-label>
+            <ion-input type="number" formControlName="send_time"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>{{ 'label.message' | translate }}:</ion-label>
+            <ion-input type="text" formControlName="message"></ion-input>
+          </ion-item>
+          
+          <button margin-top ion-button type="submit" [disabled]="!messageData.valid">{{ 'button.submit' | translate }}</button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>   
+</ion-content>

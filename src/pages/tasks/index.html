@@ -1,0 +1,19 @@
+
+<style>
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.tasks.list' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <button ion-button block (click)="openPage('TasksAddPage')">{{ 'button.add_task' | translate }}</button>
+  <ion-list *ngIf="tasks">
+    <button ion-item  *ngFor="let task of tasks" (click)="taskInfo(task)">{{ task.title }}</button>
+  </ion-list>
+</ion-content>
+

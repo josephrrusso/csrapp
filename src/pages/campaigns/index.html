@@ -1,0 +1,19 @@
+
+<style>
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.campaigns.list' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <button ion-button block (click)="openPage('CampaignsAddPage')">{{ 'button.add_campaign' | translate }}</button>
+  <ion-list *ngIf="campaigns">
+    <button ion-item  *ngFor="let campaign of campaigns" (click)="campaignInfo(campaign)">{{ campaign.name }}</button>
+  </ion-list>
+</ion-content>
+

@@ -1,0 +1,138 @@
+
+<style>
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.smsMessages.preview' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngIf="smsMessage">
+    <ion-card-content>
+      <h1>{{ smsMessage.title }}</h1>
+      by {{ smsMessage.author_name }}, p. {{ smsMessage.pages_count }}
+      <ion-row>
+          <ion-col>
+            <h2>id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ smsMessage.id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>active</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ smsMessage.active }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>status</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ smsMessage.status }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>created</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ smsMessage.created }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>modified</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ smsMessage.modified }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>created_epoch</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ smsMessage.created_epoch }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>modified_epoch</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ smsMessage.modified_epoch }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>owner</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ smsMessage.owner }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>ownerg</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ smsMessage.ownerg }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>phone_number_id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ smsMessage.phone_number_id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>phone_number_idr</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ smsMessage.phone_number_idr }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>send_time</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ smsMessage.send_time }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>message</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ smsMessage.message }}</span>
+          </ion-col>
+        </ion-row>
+          </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small color="secondary" (click)="editSmsMessages(smsMessage)">
+          <ion-icon name="construct"></ion-icon>
+          <div>{{ 'button.edit' | translate }}</div>
+        </button>          
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button icon-left clear small color="danger" (click)="deleteSmsMessages(smsMessage)">
+          <ion-icon name="trash"></ion-icon>
+          <div>{{ 'button.delete' | translate }}</div>
+        </button>          
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,19 @@
+
+<style>
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.notifications.list' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <button ion-button block (click)="openPage('NotificationsAddPage')">{{ 'button.add_notification' | translate }}</button>
+  <ion-list *ngIf="notifications">
+    <button ion-item  *ngFor="let notification of notifications" (click)="notificationInfo(notification)">{{ notification.title }}</button>
+  </ion-list>
+</ion-content>
+

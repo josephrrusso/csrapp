@@ -1,0 +1,338 @@
+
+<style>
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.groups.preview' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngIf="group">
+    <ion-card-content>
+      <h1>{{ group.title }}</h1>
+      by {{ group.author_name }}, p. {{ group.pages_count }}
+      <ion-row>
+          <ion-col>
+            <h2>id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>active</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.active }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>status</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.status }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>created</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.created }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>modified</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.modified }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>created_epoch</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.created_epoch }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>modified_epoch</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.modified_epoch }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>owner</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.owner }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>ownerg</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.ownerg }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>organization_id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.organization_id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>campaign_id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.campaign_id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>name</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.name }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>has_users</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.has_users }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>has_locations</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.has_locations }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>has_tickets</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.has_tickets }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>has_organizations</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.has_organizations }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>has_needs</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.has_needs }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>has_datapoints</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.has_datapoints }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>group_type_id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.group_type_id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>is_default</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.is_default }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>description</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.description }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>icon</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.icon }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>color</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.color }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>priority</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.priority }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>tension</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.tension }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>is_org_chart</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.is_org_chart }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>first_name</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.first_name }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>last_name</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.last_name }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>polygons</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.polygons }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>work_status</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.work_status }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>is_role</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.is_role }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>is_persistent</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.is_persistent }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>is_org_admin</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.is_org_admin }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>is_org_user</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.is_org_user }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>is_org_public</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.is_org_public }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>latitude</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.latitude }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>longitude</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.longitude }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>map_displayed</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ group.map_displayed }}</span>
+          </ion-col>
+        </ion-row>
+          </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small color="secondary" (click)="editGroups(group)">
+          <ion-icon name="construct"></ion-icon>
+          <div>{{ 'button.edit' | translate }}</div>
+        </button>          
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button icon-left clear small color="danger" (click)="deleteGroups(group)">
+          <ion-icon name="trash"></ion-icon>
+          <div>{{ 'button.delete' | translate }}</div>
+        </button>          
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

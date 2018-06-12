@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.profile' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="file">Avatar</label>
+      <a color="secondary" (click)="getImage()">Get Image</a>
+      <input type="file" id="file" accept="image/*" capture="camera" (change)="onFileChange($event)" #fileInput>
+      <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>
+    </div>
+    <button type="submit" class="btn btn-success">Submit <i class="fa fa-spinner fa-spin fa-fw" *ngIf="loading"></i></button>
+  </form>
+</ion-content>

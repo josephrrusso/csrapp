@@ -3,13 +3,13 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Меню</ion-title>
+      <ion-title>CrowdSource<b>Rescue</b></ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
+  <ion-content style='color:white; background-color: black;'>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <button style='color:white; background-color: black;' menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title | translate }}
       </button>
     </ion-list>

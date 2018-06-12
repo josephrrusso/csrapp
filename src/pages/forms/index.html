@@ -1,0 +1,19 @@
+
+<style>
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.forms.list' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <button ion-button block (click)="openPage('FormsAddPage')">{{ 'button.add_form' | translate }}</button>
+  <ion-list *ngIf="forms">
+    <button ion-item  *ngFor="let form of forms" (click)="formInfo(form)">{{ form.title }}</button>
+  </ion-list>
+</ion-content>
+

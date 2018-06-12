@@ -1,7 +1,7 @@
 {
-  "name": "ionic3-seed-jwt",
+  "name": "apigen-starter",
   "version": "0.0.1",
-  "author": "Venelin Manchev",
+  "author": "Nate Larson",
   "homepage": "http://toxic.digital",
   "private": true,
   "scripts": {
@@ -20,14 +20,33 @@
     "@angular/http": "4.1.0",
     "@angular/platform-browser": "4.1.0",
     "@angular/platform-browser-dynamic": "4.1.0",
+    "@ionic-native/background-geolocation": "^4.7.0",
+    "@ionic-native/camera": "^4.5.3",
     "@ionic-native/core": "3.7.0",
+    "@ionic-native/file": "^4.5.3",
+    "@ionic-native/file-path": "^4.5.3",
+    "@ionic-native/file-transfer": "^4.5.3",
+    "@ionic-native/geolocation": "^4.7.0",
     "@ionic-native/splash-screen": "3.7.0",
     "@ionic-native/status-bar": "3.7.0",
     "@ionic/storage": "2.0.1",
     "@ngx-translate/core": "^6.0.1",
     "@ngx-translate/http-loader": "0.0.3",
     "angular2-jwt": "^0.2.3",
+    "cordova-android": "7.0.0",
+    "cordova-plugin-camera": "^4.0.3",
+    "cordova-plugin-console": "^1.1.0",
+    "cordova-plugin-device": "^1.1.7",
+    "cordova-plugin-file": "^6.0.1",
+    "cordova-plugin-file-transfer": "^1.7.1",
+    "cordova-plugin-filepath": "^1.3.0",
+    "cordova-plugin-geolocation": "^4.0.1",
+    "cordova-plugin-mauron85-background-geolocation": "^2.3.5",
+    "cordova-plugin-splashscreen": "^4.1.0",
+    "cordova-plugin-statusbar": "^2.2.2",
+    "cordova-plugin-whitelist": "^1.3.3",
     "ionic-angular": "3.2.0",
+    "ionic-plugin-keyboard": "^2.2.1",
     "ionicons": "3.0.0",
     "rxjs": "5.1.1",
     "sw-toolbox": "3.6.0",
@@ -53,5 +72,33 @@
       "locator": "ios"
     }
   ],
-  "description": "Ionic 3 seed project with JWT support"
+  "description": "Apigen base",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-camera": {},
+      "cordova-plugin-file": {},
+      "cordova-plugin-file-transfer": {},
+      "ionic-plugin-keyboard": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-console": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-filepath": {},
+      "cordova-plugin-geolocation": {},
+      "cordova-plugin-mauron85-background-geolocation": {
+        "GOOGLE_PLAY_SERVICES_VERSION": "11+",
+        "ANDROID_SUPPORT_LIBRARY_VERSION": "23+",
+        "ICON": "@mipmap/icon",
+        "SMALL_ICON": "@mipmap/icon",
+        "ACCOUNT_NAME": "@string/app_name",
+        "ACCOUNT_LABEL": "@string/app_name",
+        "ACCOUNT_TYPE": "$PACKAGE_NAME.account",
+        "CONTENT_AUTHORITY": "$PACKAGE_NAME"
+      }
+    },
+    "platforms": [
+      "android"
+    ]
+  }
 }

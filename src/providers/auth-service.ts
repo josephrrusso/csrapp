@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import {Storage} from '@ionic/storage';
 import 'rxjs/add/operator/toPromise';
-import {UserModel} from '../models/user.model';
+import {UsersModel} from '../models/users.model';
 import {CredentialsModel} from '../models/credentials.model';
 import {AuthHttp, JwtHelper, tokenNotExpired} from 'angular2-jwt';
 import {Observable} from 'rxjs/Rx';
@@ -29,7 +29,7 @@ export class AuthService {
 
   }
 
-  register(userData: UserModel) {
+  register(userData: UsersModel) {
 
     return this.http.post(this.cfg.apiUrl + this.cfg.user.register, userData)
       .toPromise()
@@ -37,7 +37,7 @@ export class AuthService {
         this.saveData(data)
         let rs = data.json();
         this.idToken = rs.token;
-        this.scheduleRefresh();
+        //this.scheduleRefresh();
       })
       .catch(e => console.log("reg error", e));
 
@@ -49,10 +49,11 @@ export class AuthService {
     return this.http.post(this.cfg.apiUrl + this.cfg.user.login, credentials)
       .toPromise()
       .then(data => {
-          let rs = data.json();
+         let rs = data.json();
          this.saveData(data);
-         this.idToken = rs.token;
-         this.scheduleRefresh();
+         this.idToken = rs.data.token;
+         //this.scheduleRefresh();
+         //this.getNewJwt();
       })
       .catch(e => console.log('login error', e));
 
@@ -63,8 +64,8 @@ export class AuthService {
 
     let rs = data.json();
 
-    this.storage.set("user", rs.user);
-    this.storage.set("id_token", rs.token);
+    this.storage.set("user", rs.data.user);
+    this.storage.set("id_token", rs.data.token);
   }
 
   logout() {
@@ -89,23 +90,25 @@ export class AuthService {
            Token : thetoken
         };
 
-        this.http.get(this.cfg.apiUrl + this.cfg.user.refresh+"?Token="+thetoken)
+        //this.http.get(this.cfg.apiUrl + this.cfg.user.refresh+"?Token="+thetoken)
+        this.http.get(this.cfg.apiUrl + this.cfg.user.refresh)
          .map(res => res.json())
          .subscribe(res => {
            console.log(JSON.stringify(res));
-           console.log(res.status);
+           console.log(res.success);
            // If the API returned a successful response, mark the user as logged in
            // this need to be fixed on Laravel project to retun the New Token ;
-            if(res.status == 'success') {
-                   this.storage.set("id_token", res.token);
+            if (res.success) {
+              console.log(res.data.token);
+              this.storage.set("id_token", res.data.token);
 
-             } else {
-               console.log("The Token Black Listed");
-               this.logout();
-
+            } else {
+              console.log("The Token Black Listed");
+              this.logout();
             }
          }, err => {
-           console.error('ERROR', err);
+           console.error('ERROR AuthService line 110', err);
+           //console.log(err);
           });
 
        });
@@ -159,7 +162,7 @@ public startupTokenRefresh() {
             let delay: number = exp.valueOf() - now;
 
             if(delay <= 0) {
-              delay=1;
+              delay=5;
             }
              // Use the delay in a timer to
             // run the refresh at the proper time

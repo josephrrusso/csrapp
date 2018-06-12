@@ -1,0 +1,19 @@
+
+<style>
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.groups.list' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <button ion-button block (click)="openPage('GroupsAddPage')">{{ 'button.add_group' | translate }}</button>
+  <ion-list *ngIf="groups">
+    <button ion-item  *ngFor="let group of groups" (click)="groupInfo(group)">{{ group.title }}</button>
+  </ion-list>
+</ion-content>
+

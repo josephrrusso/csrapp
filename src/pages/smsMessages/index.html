@@ -1,0 +1,19 @@
+
+<style>
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.smsMessages.list' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <button ion-button block (click)="openPage('SmsMessagesAddPage')">{{ 'button.add_smsMessage' | translate }}</button>
+  <ion-list *ngIf="smsMessages">
+    <button ion-item  *ngFor="let smsMessage of smsMessages" (click)="smsMessageInfo(smsMessage)">{{ smsMessage.title }}</button>
+  </ion-list>
+</ion-content>
+

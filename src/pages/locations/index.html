@@ -1,0 +1,19 @@
+
+<style>
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.locations.list' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <button ion-button block (click)="openPage('LocationsAddPage')">{{ 'button.add_location' | translate }}</button>
+  <ion-list *ngIf="locations">
+    <button ion-item  *ngFor="let location of locations" (click)="locationInfo(location)">{{ location.title }}</button>
+  </ion-list>
+</ion-content>
+
