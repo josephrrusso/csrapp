@@ -48,39 +48,4 @@ export class ProtectedPage {
 
     return true;
   }
-
-  /*
-  geolocationFunction() {
-    
-    this.geolocation.getCurrentPosition().then((position) => {
-      //let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
- 
-      let alert = this.alertCtrl.create({
-        title: 'Longitude',
-        subTitle: position.coords.longitude,
-        buttons: ['Dismiss']
-      });
-      alert.present();
-
-    }, (err) => {
-      let alert = this.alertCtrl.create({
-        title: 'Longitude',
-        subTitle: 'No long',
-        buttons: ['Dismiss']
-      });
-      alert.present();
-    });
-    
-  }
-  */
-
-  /*
-  ionViewDidEnter() {
-    setInterval(() => { 
-
-       this.geolocationFunction(); // Now the "this" still references the component
-       //console.log("catbaby")
-    }, 1000);
-  }
-  */
 }

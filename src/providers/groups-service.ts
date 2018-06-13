@@ -20,6 +20,15 @@ export class GroupsService {
     this.route = '/groups'
   }
 
+  membershipapi(id: number) {    
+    return this.authHttp.get(this.cfg.apiUrl + this.route + '/membershipapi/' + id)
+      .toPromise()
+      .then(rs => {
+        return rs.json();
+      })
+      .catch(e => console.log("View groups error", e));
+  }
+
   index() {    
     return this.authHttp.get(this.cfg.apiUrl + this.route)
       .toPromise()

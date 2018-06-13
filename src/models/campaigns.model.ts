@@ -18,5 +18,6 @@ export class CampaignsModel {
   public lng_min?: number;
   public security_profile_id?: number;
   public home_links?: string;
+  public map?: any;
    
 }
