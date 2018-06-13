@@ -4,6 +4,7 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {AuthService} from '../providers/auth-service';
 import {TranslateService} from '@ngx-translate/core';
+import {GeoService} from '../providers/geo-service';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,6 +21,7 @@ export class MyApp {
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
     public authService: AuthService,
+    public geoService: GeoService,
     translate: TranslateService) {
 
     this.initializeApp();
@@ -44,7 +46,12 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.authService.startupTokenRefresh();
+      //this.authService.startupTokenRefresh();
+
+      setInterval(() => { 
+         this.geoService.geo();
+         //console.log("test");
+      }, 30000);
     });
   }
 
@@ -56,4 +63,5 @@ export class MyApp {
 
     this.nav.setRoot(page.component);
   }
+
 }
