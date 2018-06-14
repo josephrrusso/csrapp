@@ -38,15 +38,25 @@ export class LoginPage {
   login() {
     //use this.loginData.value to authenticate the user
     this.authService.login(this.loginData.value)
-      .then(() => {
-        console.log("loginThen");
-        this.redirectToHome();
+      .then(rs => {
+        this.storage.set("id_token", rs.data.token)
+        .then(() => {
+          this.storage.set("expiry", rs.exp)
+          .then(() => {
+            this.storage.set("user", rs.data.user)
+            .then(() => {
+              this.redirectToHome();
+            })
+            .catch(e => console.log('login error', e));
+          })
+          .catch(e => console.log('login error', e));
+        })
+        .catch(e => console.log('login error', e));
       })
       .catch(e => console.log("login error", e));
   }
 
   redirectToHome() {
-    console.log("redirectToHome");
     this.navCtrl.setRoot('CampaignsPage');
     this.menuCtrl.enable(true);
   }

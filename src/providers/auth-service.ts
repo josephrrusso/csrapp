@@ -34,9 +34,11 @@ export class AuthService {
     return this.http.post(this.cfg.apiUrl + this.cfg.user.register, userData)
       .toPromise()
       .then(data => {
-        this.saveData(data)
         let rs = data.json();
-        this.idToken = rs.token;
+        return rs;
+
+        //this.saveData(data)
+        //this.idToken = rs.token;
         //this.scheduleRefresh();
       })
       .catch(e => console.log("reg error", e));
@@ -49,30 +51,15 @@ export class AuthService {
     return this.http.post(this.cfg.apiUrl + this.cfg.user.login, credentials)
       .toPromise()
       .then(data => {
-        console.log("inner");
          let rs = data.json();
-         this.saveData(data);
-         this.idToken = rs.data.token;
-         // Get expiry here, save to storage
+         return rs;
 
-
+         //this.saveData(data);
+         //this.idToken = rs.data.token;
          //this.scheduleRefresh();
          //this.getNewJwt();
       })
       .catch(e => console.log('login error', e));
-  }
-
-  saveData(data: any) {
-
-    let rs = data.json();
-
-    console.log(rs);
-
-    this.storage.set("user", rs.data.user);
-    this.storage.set("id_token", rs.data.token)
-    .then(() => {console.log("saved token")})
-    .catch(e => console.log('login error', e));
-    this.storage.set("expiry", rs.exp);
   }
 
   logout() {
@@ -85,4 +72,17 @@ export class AuthService {
   isValid() {
     return tokenNotExpired();
   }
+
+  /*
+  saveData(data: any) {
+
+    let rs = data.json();
+
+    console.log(rs);
+
+    this.storage.set("user", rs.data.user);
+    this.storage.set("id_token", rs.data.token);
+    this.storage.set("expiry", rs.exp);
+  }
+  */
 }

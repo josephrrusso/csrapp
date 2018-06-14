@@ -25,7 +25,7 @@ export class ProtectedPage {
     this.storage.get('id_token')
       .then(id_token => {
         if (id_token === null) {
-          console.log("token")
+          console.log("token not found")
           /*
           this.storage.remove('user');
           this.storage.remove('id_token');
@@ -39,7 +39,7 @@ export class ProtectedPage {
           .then(expiry => {
             var now = Math.floor((new Date).getTime()/1000);
             if (expiry < now) {
-              console.log("expiry")
+              console.log("expiry epoch surpassed")
               /*
               this.storage.remove('user');
               this.storage.remove('id_token');

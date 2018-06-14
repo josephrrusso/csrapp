@@ -95,7 +95,6 @@ export class CampaignsInfoPage extends ProtectedPage {
     $(el).closest(".container").find("input:checked").each(function() {
       checkedMaps.push($(this).val());
     });
-    console.log(checkedMaps)
     for (var m in checkedMaps) {
       this.groupsService.membershipapi(checkedMaps[m])
       .then(
@@ -117,23 +116,25 @@ export class CampaignsInfoPage extends ProtectedPage {
  
       let mapOptions = {
         center: latLng,
-        zoom: 15,
+        zoom: 8,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
  
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
     }, (err) => {
-      let latLng = new google.maps.LatLng(-34.9290, 138.6010);
+      let latLng = new google.maps.LatLng(29.35, -95.75);
  
       let mapOptions = {
         center: latLng,
-        zoom: 15,
+        zoom: 8,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
    
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
     });
   }
+
+
   
   editCampaigns(campaign: CampaignsModel) {
     this.navCtrl.push('CampaignsEditPage', {campaign: campaign});

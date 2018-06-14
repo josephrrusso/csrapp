@@ -5,6 +5,7 @@ import {ProtectedPage} from '../../pages/protected-page/protected-page';
 import {Storage} from '@ionic/storage';
 import {TicketsService} from '../../providers/tickets-service';
 import {TicketsModel} from '../../models/tickets.model';
+import { Geolocation } from '@ionic-native/geolocation';
 
 declare var google;
 
@@ -26,6 +27,7 @@ export class TicketsInfoPage extends ProtectedPage {
     public navParams: NavParams,
     public menuCtrl: MenuController,
     public storage: Storage,
+    public geolocation: Geolocation,
     public ticketsService: TicketsService) {
 
     super(navCtrl, navParams, storage);
@@ -36,19 +38,19 @@ export class TicketsInfoPage extends ProtectedPage {
 
   ionViewWillEnter() {
     this.ticketsService.view(this.ticket_id)
-      .then(tickets => {
-        
+      .then(ticket => {
+        this.ticket = ticket;
+        this.loadMap(ticket.data.latitude, ticket.data.longitude);
       })
       .catch(e => console.log("View tickets error", e));
   }
 
   ionViewDidLoad(){
-    this.loadMap();
   }
  
-  loadMap(){
+  loadMap(lat: number, lng: number) {
  
-    let latLng = new google.maps.LatLng(-34.9290, 138.6010);
+    let latLng = new google.maps.LatLng(lat, lng);
  
     let mapOptions = {
       center: latLng,
@@ -57,7 +59,27 @@ export class TicketsInfoPage extends ProtectedPage {
     }
  
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
- 
+    this.dropMarker(lat, lng);
+
+    this.geolocation.getCurrentPosition().then((position) => {
+      this.dropMarker(position.coords.latitude, position.coords.longitude);
+      var fitBounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+        new google.maps.LatLng(lat, lng)
+      );
+      this.map.fitBounds(fitBounds);
+    }, (err) => {});
+  }
+
+
+  dropMarker(latitude, longitude) {
+    var icon = 'http://crowdsourcerescue.com/img/mappin3.png';
+    var myLatLng = new google.maps.LatLng({lat: latitude, lng: longitude});
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: this.map,
+      icon: icon,
+    });
   }
   
   editTickets(ticket: TicketsModel) {
@@ -69,5 +91,7 @@ export class TicketsInfoPage extends ProtectedPage {
       .then(() => this.navCtrl.pop())
       .catch(e => console.log("Delete ticket error", e)); 
   }
+
+
 }
 

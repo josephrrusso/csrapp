@@ -33,7 +33,7 @@ export class TicketsService {
     return this.authHttp.get(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
-        return rs.json().ticket;
+        return rs.json();
       })
       .catch(e => console.log("View ticket error", e));
   }
