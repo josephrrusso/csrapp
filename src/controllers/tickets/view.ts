@@ -18,6 +18,7 @@ export class TicketsInfoPage extends ProtectedPage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
 
+  private ticket_id: number;
   private ticket: TicketsModel;
 
   constructor(
@@ -29,8 +30,16 @@ export class TicketsInfoPage extends ProtectedPage {
 
     super(navCtrl, navParams, storage);
     
-    this.ticket = navParams.get('ticket');
+    this.ticket_id = navParams.get('ticket_id');
 
+  }
+
+  ionViewWillEnter() {
+    this.ticketsService.view(this.ticket_id)
+      .then(tickets => {
+        
+      })
+      .catch(e => console.log("View tickets error", e));
   }
 
   ionViewDidLoad(){

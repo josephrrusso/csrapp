@@ -18,20 +18,23 @@
 <ion-content padding>
   <div class="container">
     <div *ngIf="campaign">
-      <ion-list>
-        <div ion-item *ngFor="let map of campaign.maps">
-          <button ion-item>{{ map.name }}</button>
-          <div ion-item *ngFor="let group of map.groups">
-            <button ion-item (click)="mapit(group)">{{ group.name }}</button>
-            <input [value]="group.id" type="checkbox" ng-model="selected[group.id]"> {{ group.name }}
+      <div id="mapchecks_{{campaign.id}}">
+        <ion-list>
+          <div ion-item *ngFor="let map of campaign.maps">
+            <button ion-item>{{ map.name }}</button>
+            <div ion-item *ngFor="let group of map.groups">
+              <button ion-item (click)="mapit(group)">{{ group.name }}</button>
+              <input [value]="group.id" type="checkbox" ng-model="selected[group.id]"> {{ group.name }}
+            </div>
           </div>
-        </div>
-      </ion-list>
-      <button ion-item (click)="mapit($event)">Map It!</button>
+        </ion-list>
+      </div>
+      <button ion-item (click)="mapit(campaign.id)">Map It!</button>
       <button ion-item (click)="deleteMarkers()">Remove</button>
     </div>
     <div #map id="map"></div>
   </div>
+  <!--
   <ion-card *ngIf="campaign">
     <ion-card-content>
       <h1>{{ campaign.title }}</h1>
@@ -187,4 +190,5 @@
       </ion-col>
     </ion-row>
   </ion-card>
+-->
 </ion-content>

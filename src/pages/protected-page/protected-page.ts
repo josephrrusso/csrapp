@@ -20,32 +20,43 @@ export class ProtectedPage {
 
   ionViewCanEnter() {
     // Get token expiry. If past due, then log out
-    this.storage.get('expiry')
-      .then(expiry => {
-        var now = Math.floor((new Date).getTime()/1000);
-        if (expiry < now) {
-          this.storage.remove('user');
-          this.storage.remove('id_token');
-          this.storage.remove('expiry');
-          this.navCtrl.setRoot('LoginPage');
-          return false;
-        }
-      })
-      .catch(e => console.log("Page Auth Error", e));
     
     // If no token, log out
     this.storage.get('id_token')
       .then(id_token => {
         if (id_token === null) {
+          console.log("token")
+          /*
           this.storage.remove('user');
           this.storage.remove('id_token');
           this.storage.remove('expiry');
+          */
           this.navCtrl.setRoot('LoginPage');
           return false;
+        }
+        else {
+          this.storage.get('expiry')
+          .then(expiry => {
+            var now = Math.floor((new Date).getTime()/1000);
+            if (expiry < now) {
+              console.log("expiry")
+              /*
+              this.storage.remove('user');
+              this.storage.remove('id_token');
+              this.storage.remove('expiry');
+              */
+              this.navCtrl.setRoot('LoginPage');
+              return false;
+            }
+            else {
+              return true;
+            }
+          })
+          .catch(e => console.log("Page Auth Error", e));
         }
       })
       .catch(e => console.log("Page Auth Error", e));
 
-    return true;
+    //return true;
   }
 }

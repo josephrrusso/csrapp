@@ -58,11 +58,16 @@ export class CampaignsInfoPage extends ProtectedPage {
       map: map,
       icon: icon,
     });
-    marker.addListener('click', function() {
-      this.navCtrl.push('TicketsInfoPage', {campaign: campaign});
+    
+    marker.addListener('click', (event) => {
+      this.viewTicket(item['id']);
     });
 
     this.markers.push(marker);
+  }
+
+  viewTicket(id) {
+    this.navCtrl.push('TicketsInfoPage', {ticket_id: id});
   }
 
   // Sets the map on all markers in the array.
@@ -83,13 +88,14 @@ export class CampaignsInfoPage extends ProtectedPage {
     this.markers = [];
   }
 
-  mapit(event) {
+  mapit(campaign_id) {
     //this.loadMap();
-    var el = event.originalTarget;
+    var el = $("#mapchecks_"+campaign_id);
     var checkedMaps = [];
     $(el).closest(".container").find("input:checked").each(function() {
       checkedMaps.push($(this).val());
     });
+    console.log(checkedMaps)
     for (var m in checkedMaps) {
       this.groupsService.membershipapi(checkedMaps[m])
       .then(

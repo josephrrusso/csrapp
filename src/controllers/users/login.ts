@@ -38,11 +38,15 @@ export class LoginPage {
   login() {
     //use this.loginData.value to authenticate the user
     this.authService.login(this.loginData.value)
-      .then(() => this.redirectToHome())
+      .then(() => {
+        console.log("loginThen");
+        this.redirectToHome();
+      })
       .catch(e => console.log("login error", e));
   }
 
   redirectToHome() {
+    console.log("redirectToHome");
     this.navCtrl.setRoot('CampaignsPage');
     this.menuCtrl.enable(true);
   }

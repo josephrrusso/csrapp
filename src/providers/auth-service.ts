@@ -49,6 +49,7 @@ export class AuthService {
     return this.http.post(this.cfg.apiUrl + this.cfg.user.login, credentials)
       .toPromise()
       .then(data => {
+        console.log("inner");
          let rs = data.json();
          this.saveData(data);
          this.idToken = rs.data.token;
@@ -68,7 +69,9 @@ export class AuthService {
     console.log(rs);
 
     this.storage.set("user", rs.data.user);
-    this.storage.set("id_token", rs.data.token);
+    this.storage.set("id_token", rs.data.token)
+    .then(() => {console.log("saved token")})
+    .catch(e => console.log('login error', e));
     this.storage.set("expiry", rs.exp);
   }
 

@@ -48,10 +48,11 @@ export class MyApp {
       this.splashScreen.hide();
       //this.authService.startupTokenRefresh();
 
+      /*
       setInterval(() => { 
          this.geoService.geo();
-         //console.log("test");
       }, 30000);
+      */
     });
   }
 
