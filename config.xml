@@ -105,5 +105,6 @@
         <variable name="CONTENT_AUTHORITY" value="$PACKAGE_NAME" />
     </plugin>
     <allow-navigation href="http://192.168.1.72:8100" />
-    <engine name="android" spec="7.0.0" />
+    <engine name="android" spec="~7.0.0" />
+    <allow-navigation href="http://192.168.1.73:8100" />
 </widget>

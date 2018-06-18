@@ -6,189 +6,69 @@
   #map {
     height: 100%;
   }
+  .toggle{
+    background-color: black;
+    color: white;
+    border-style: solid;
+    border-color: black;
+    border-width: 4px;
+    border-radius: 2px;
+  }
+  .mapLayerButtonOff{
+    background-color: #c2c4c2;
+    color: white;
+    border-radius: 2px;
+  }
+  .mapLayerButtonOn{
+    background-color: #42aaf4;
+    color: white;
+    border-radius: 2px;
+  }
+  .mapItButton{
+    background-color: #048e10;
+    color: white;
+    border-radius: 2px;
+    width: 49%;
+    margin-right: 2%;
+    text-align: center;
+  }
+  .removeButton{
+    background-color: red;
+    color: white;
+    border-radius: 2px;
+    width: 49%;
+    text-align: center;
+  }
 </style>
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>    
-    <ion-title>CHANGED</ion-title>
+    <ion-title *ngIf="campaign">{{ campaign.name }}</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <div class="container">
     <div *ngIf="campaign">
-      <div id="mapchecks_{{campaign.id}}">
+      <div id="mapchecks_{{campaign.id}}" class="finder">
         <ion-list>
           <div ion-item *ngFor="let map of campaign.maps">
-            <button ion-item>{{ map.name }}</button>
-            <div ion-item *ngFor="let group of map.groups">
-              <button ion-item (click)="mapit(group)">{{ group.name }}</button>
-              <input [value]="group.id" type="checkbox" ng-model="selected[group.id]"> {{ group.name }}
+            <button ion-item no-lines class="toggle" (click)="toggle(map.id)">{{ map.name }}</button>
+            <div ion-item no-lines *ngFor="let group of map.groups" id="div_{{map.id}}" style="display: none;">
+              <button ion-item no-lines (click)="mapitHelper(group)" class="mapLayerButtonOff" id="{{ group.id }}">{{ group.name }}</button>
+              <!--<input [value]="group.id" type="checkbox" ng-model="selected[group.id]"> {{ group.name }} -->
             </div>
           </div>
         </ion-list>
       </div>
-      <button ion-item (click)="mapit(campaign.id)">Map It!</button>
-      <button ion-item (click)="deleteMarkers()">Remove</button>
+      <div ion-row style="margin-bottom: 2px;">
+        <button ion-item no-lines (click)="mapit(campaign.id)" class="mapItButton">Map It!</button>
+        <button ion-item no-lines (click)="deleteMarkers()" class="removeButton">Remove</button>
+      </div>
+      
     </div>
     <div #map id="map"></div>
   </div>
-  <!--
-  <ion-card *ngIf="campaign">
-    <ion-card-content>
-      <h1>{{ campaign.title }}</h1>
-      <ion-row>
-          <ion-col>
-            <h2>id</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.id }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>active</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.active }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>status</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.status }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>created</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.created }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>modified</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.modified }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>created_epoch</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.created_epoch }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>modified_epoch</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.modified_epoch }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>owner</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.owner }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>ownerg</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.ownerg }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>organization_id</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.organization_id }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>name</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.name }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>lat_max</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.lat_max }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>lat_min</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.lat_min }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>lng_max</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.lng_max }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>lng_min</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.lng_min }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>security_profile_id</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.security_profile_id }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>home_links</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ campaign.home_links }}</span>
-          </ion-col>
-        </ion-row>
-          </ion-card-content>
-    <ion-row>
-      <ion-col>
-        <button ion-button icon-left clear small color="secondary" (click)="editCampaigns(campaign)">
-          <ion-icon name="construct"></ion-icon>
-          <div>{{ 'button.edit' | translate }}</div>
-        </button>          
-      </ion-col>
-      <ion-col text-right>
-        <button ion-button icon-left clear small color="danger" (click)="deleteCampaigns(campaign)">
-          <ion-icon name="trash"></ion-icon>
-          <div>{{ 'button.delete' | translate }}</div>
-        </button>          
-      </ion-col>
-    </ion-row>
-  </ion-card>
--->
+  
 </ion-content>

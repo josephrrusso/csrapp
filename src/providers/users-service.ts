@@ -33,7 +33,7 @@ export class UsersService {
     return this.authHttp.get(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
-        return rs.json().user;
+        return rs.json();
       })
       .catch(e => console.log("View user error", e));
   }
