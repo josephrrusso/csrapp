@@ -1,26 +1,99 @@
 
 <style>
+  #map {
+    height: 100%;
+  }
 </style>
+
+
 
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>    
-    <ion-title>{{ 'page.locations.preview' | translate }}</ion-title>
+    <ion-title *ngIf="location">{{ location.data.name }}</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
+  <div *ngIf="location">
+    <h1>{{ location.data.name }}</h1>
+  </div>
+  <div #map id="map" style="width: 90%;"></div>
+
+  <ion-card *ngIf="location">
+
+    <ion-card-header style="background-color: #d9d9db;">
+      <h1>Datapoints</h1>
+    </ion-card-header>
+
+    <ion-card-content style="padding-top: 6px;">
+      <ion-list>
+        <div ion-item *ngFor="let datapoint of location.datapoints">
+          <ion-row>
+              <span style="margin: auto; font-weight: bold;">{{ datapoint.datapoint_name }}</span>
+          </ion-row>
+          <ion-row *ngIf="datapoint.value_numeric">
+            <span style="margin: auto;">{{ datapoint.value_numeric }}</span>
+          </ion-row>
+          <ion-row *ngIf="datapoint.value_boolean">
+            <span style="margin: auto;">{{ datapoint.value_boolean }}</span>
+          </ion-row>
+          <ion-row *ngIf="datapoint.value_option">
+            <span style="margin: auto;">{{ datapoint.value_option }}</span>
+          </ion-row>
+          <ion-row *ngIf="datapoint.value_text">
+            <span style="margin: auto;">{{ datapoint.value_text }}</span>
+          </ion-row>
+        </div>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="location">
+
+    <ion-card-header style="background-color: #d9d9db;">
+      <h1>Needs</h1>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list style="padding-top: 6px;">
+        <ng-container *ngFor="let need of location.needs">
+          <div ion-item *ngIf="need.has_or_needs==0" style="background-color: #f47373; width: auto; height: auto; border-color: black; border-style: solid; border-radius: 5px; border-width: 1px; margin-bottom: 2px;">
+            <ion-row>
+                <span style="margin: auto; font-weight: bold;">{{ need.name }}</span>
+            </ion-row>
+            <ion-row>
+              <span style="margin: auto;">Needs {{ need.amount }}</span>
+            </ion-row>
+          </div>
+          <div ion-item *ngIf="need.has_or_needs==1">
+            <ion-row>
+                <span style="margin: auto; font-weight: bold;">{{ need.name }}</span>
+            </ion-row>
+            <ion-row>
+              <span style="margin: auto;">Has {{ need.amount }}</span>
+            </ion-row>
+          </div>
+        </ng-container>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  
+
+</ion-content>
+
+
+<!--
   <ion-card *ngIf="location">
     <ion-card-content>
-      <h1>{{ location.title }}</h1>
-      by {{ location.author_name }}, p. {{ location.pages_count }}
+      <h1>{{ location.data.title }}</h1>
       <ion-row>
           <ion-col>
             <h2>id</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ location.id }}</span>
+            <span>{{ location.data.id }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -28,7 +101,7 @@
             <h2>active</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ location.active }}</span>
+            <span>{{ location.data.active }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -36,7 +109,7 @@
             <h2>status</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ location.status }}</span>
+            <span>{{ location.data.status }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -44,7 +117,7 @@
             <h2>created</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ location.created }}</span>
+            <span>{{ location.data.created }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -52,7 +125,7 @@
             <h2>modified</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ location.modified }}</span>
+            <span>{{ location.data.modified }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -60,7 +133,7 @@
             <h2>created_epoch</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ location.created_epoch }}</span>
+            <span>{{ location.data.created_epoch }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -68,7 +141,7 @@
             <h2>modified_epoch</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ location.modified_epoch }}</span>
+            <span>{{ location.data.modified_epoch }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -76,7 +149,7 @@
             <h2>owner</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ location.owner }}</span>
+            <span>{{ location.data.owner }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -84,55 +157,7 @@
             <h2>ownerg</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ location.ownerg }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>organization_id</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ location.organization_id }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>location_type_id</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ location.location_type_id }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>name</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ location.name }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>latitude</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ location.latitude }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>longitude</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ location.longitude }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>last_contacted</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ location.last_contacted }}</span>
+            <span>{{ location.data.ownerg }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -140,7 +165,15 @@
             <h2>campaign_id</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ location.campaign_id }}</span>
+            <span>{{ location.data.campaign_id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>location_status_id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.data.location_status_id }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -148,7 +181,7 @@
             <h2>first_name</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ location.first_name }}</span>
+            <span>{{ location.data.first_name }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -156,7 +189,31 @@
             <h2>last_name</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ location.last_name }}</span>
+            <span>{{ location.data.last_name }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>latitude</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.data.latitude }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>longitude</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.data.longitude }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>last_contacted</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ location.data.last_contacted }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -164,31 +221,31 @@
             <h2>polygons</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ location.polygons }}</span>
+            <span>{{ location.data.polygons }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
           <ion-col>
-            <h2>geofence</h2>
+            <h2>name</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ location.geofence }}</span>
+            <span>{{ location.data.name }}</span>
           </ion-col>
         </ion-row>
           </ion-card-content>
     <ion-row>
       <ion-col>
-        <button ion-button icon-left clear small color="secondary" (click)="editLocations(location)">
+        <button ion-button icon-left clear small color="secondary" (click)="editlocations(location)">
           <ion-icon name="construct"></ion-icon>
           <div>{{ 'button.edit' | translate }}</div>
         </button>          
       </ion-col>
       <ion-col text-right>
-        <button ion-button icon-left clear small color="danger" (click)="deleteLocations(location)">
+        <button ion-button icon-left clear small color="danger" (click)="deletelocations(location)">
           <ion-icon name="trash"></ion-icon>
           <div>{{ 'button.delete' | translate }}</div>
         </button>          
       </ion-col>
     </ion-row>
   </ion-card>
-</ion-content>
+  -->

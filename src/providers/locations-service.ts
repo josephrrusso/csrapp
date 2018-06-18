@@ -33,7 +33,7 @@ export class LocationsService {
     return this.authHttp.get(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
-        return rs.json().location;
+        return rs.json();
       })
       .catch(e => console.log("View location error", e));
   }

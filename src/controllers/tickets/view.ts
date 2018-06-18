@@ -41,6 +41,7 @@ export class TicketsInfoPage extends ProtectedPage {
       .then(ticket => {
         this.ticket = ticket;
         this.loadMap(ticket.data.latitude, ticket.data.longitude);
+        console.log(this.ticket);
       })
       .catch(e => console.log("View tickets error", e));
   }
