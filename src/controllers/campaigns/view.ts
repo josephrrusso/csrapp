@@ -58,16 +58,36 @@ export class CampaignsInfoPage extends ProtectedPage {
       map: map,
       icon: icon,
     });
+    if (item.entity == 'tickets'){
+      marker.addListener('click', (event) => {
+        this.viewTicket(item['id']);
+      });
+    }
+    if (item.entity == 'users'){
+      marker.addListener('click', (event) => {
+        this.viewUser(item['id']);
+      });
+    }
+    if (item.entity == 'locations'){
+      marker.addListener('click', (event) => {
+        this.viewLocation(item['id']);
+      });
+    }
     
-    marker.addListener('click', (event) => {
-      this.viewTicket(item['id']);
-    });
 
     this.markers.push(marker);
   }
 
   viewTicket(id) {
     this.navCtrl.push('TicketsInfoPage', {ticket_id: id});
+  }
+
+  viewUser(id) {
+    this.navCtrl.push('UsersInfoPage', {user_id: id});
+  }
+
+  viewLocation(id) {
+    this.navCtrl.push('LocationsInfoPage', {location_id: id});
   }
 
   // Sets the map on all markers in the array.
@@ -86,13 +106,14 @@ export class CampaignsInfoPage extends ProtectedPage {
   deleteMarkers() {
     this.clearMarkers();
     this.markers = [];
+    this.removeHelper();
   }
 
   mapit(campaign_id) {
     //this.loadMap();
     var el = $("#mapchecks_"+campaign_id);
     var checkedMaps = [];
-    $(el).closest(".container").find("input:checked").each(function() {
+    $(el).closest(".container").find("input:hidden").each(function() {
       checkedMaps.push($(this).val());
     });
     for (var m in checkedMaps) {
@@ -110,8 +131,9 @@ export class CampaignsInfoPage extends ProtectedPage {
   }
  
   loadMap() {
-
+    
     this.geolocation.getCurrentPosition().then((position) => {
+      console.log(this.geolocation);
       let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
  
       let mapOptions = {
@@ -122,6 +144,8 @@ export class CampaignsInfoPage extends ProtectedPage {
  
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
     }, (err) => {
+      console.log(err.code);
+      console.log(err.message);
       let latLng = new google.maps.LatLng(29.35, -95.75);
  
       let mapOptions = {
@@ -144,6 +168,39 @@ export class CampaignsInfoPage extends ProtectedPage {
     this.campaignsService.delete(campaign.id)
       .then(() => this.navCtrl.pop())
       .catch(e => console.log("Delete campaign error", e)); 
+  }
+
+  toggle(id) {
+    $("#div_" + id).toggle();
+  }
+
+  mapitHelper(group) {
+    //console.log(stuff);
+    var button = $("#"+ group.id)[0];
+    if (button.className == "mapLayerButtonOff item item-block item-md activated"){
+
+        button.className = "mapLayerButtonOn item item-block item-md activated";
+        var input = document.createElement("input");
+        input.type = "hidden"; input.className = "hiddenInput"; input.value = group.id; input.id = "input_" + group.id;
+        var div = $(".finder")[0];
+        div.appendChild(input);
+
+    } else {
+        var input2 = $("#input_" + group.id)[0];
+        input2.parentNode.removeChild(input2);
+        button.className = "mapLayerButtonOff item item-block item-md activated";
+    }
+
+  }
+  removeHelper(){
+    var inputs = $(".hiddenInput");
+    var button;
+    console.log(inputs);
+    for (var i = inputs.length - 1; i >= 0; i--) {
+      inputs[i].parentNode.removeChild(inputs[i]);
+      button = $("#"+ inputs[i].value)[0];
+      button.className = "mapLayerButtonOff item item-block item-md activated";
+    }
   }
 }
 

@@ -93,7 +93,7 @@
     <plugin name="cordova-plugin-file" spec="^6.0.1" />
     <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
     <plugin name="cordova-plugin-filepath" spec="^1.1.0" />
-    <plugin name="cordova-plugin-geolocation" spec="^4.0.1" />
+    <plugin name="cordova-plugin-geolocation" spec="2.4.3" />
     <plugin name="cordova-plugin-mauron85-background-geolocation" spec="^2.3.5">
         <variable name="GOOGLE_PLAY_SERVICES_VERSION" value="11+" />
         <variable name="ANDROID_SUPPORT_LIBRARY_VERSION" value="23+" />
@@ -105,5 +105,6 @@
         <variable name="CONTENT_AUTHORITY" value="$PACKAGE_NAME" />
     </plugin>
     <allow-navigation href="http://192.168.1.72:8100" />
-    <engine name="android" spec="7.0.0" />
+    <engine name="android" spec="~7.0.0" />
+    <allow-navigation href="http://192.168.1.73:8100" />
 </widget>

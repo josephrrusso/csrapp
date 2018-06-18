@@ -1,26 +1,99 @@
 
 <style>
+  #map {
+    height: 100%;
+  }
 </style>
+
+
 
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>    
-    <ion-title>{{ 'page.users.preview' | translate }}</ion-title>
+    <ion-title *ngIf="user">{{ user.data.first_name }} {{ user.data.last_name }}</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
+  <div *ngIf="user">
+    <h1>{{ user.data.first_name }} {{ user.data.last_name }}</h1>
+  </div>
+  <div #map id="map" style="width: 90%;"></div>
+
+  <ion-card *ngIf="user">
+
+    <ion-card-header style="background-color: #d9d9db;">
+      <h1>Datapoints</h1>
+    </ion-card-header>
+
+    <ion-card-content style="padding-top: 6px;">
+      <ion-list>
+        <div ion-item *ngFor="let datapoint of user.datapoints">
+          <ion-row>
+              <span style="margin: auto; font-weight: bold;">{{ datapoint.datapoint_name }}</span>
+          </ion-row>
+          <ion-row *ngIf="datapoint.value_numeric">
+            <span style="margin: auto;">{{ datapoint.value_numeric }}</span>
+          </ion-row>
+          <ion-row *ngIf="datapoint.value_boolean">
+            <span style="margin: auto;">{{ datapoint.value_boolean }}</span>
+          </ion-row>
+          <ion-row *ngIf="datapoint.value_option">
+            <span style="margin: auto;">{{ datapoint.value_option }}</span>
+          </ion-row>
+          <ion-row *ngIf="datapoint.value_text">
+            <span style="margin: auto;">{{ datapoint.value_text }}</span>
+          </ion-row>
+        </div>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="user">
+
+    <ion-card-header style="background-color: #d9d9db;">
+      <h1>Needs</h1>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list style="padding-top: 6px;">
+        <ng-container *ngFor="let need of user.needs">
+          <div ion-item *ngIf="need.has_or_needs==0" style="background-color: #f47373; width: auto; height: auto; border-color: black; border-style: solid; border-radius: 5px; border-width: 1px; margin-bottom: 2px;">
+            <ion-row>
+                <span style="margin: auto; font-weight: bold;">{{ need.name }}</span>
+            </ion-row>
+            <ion-row>
+              <span style="margin: auto;">Needs {{ need.amount }}</span>
+            </ion-row>
+          </div>
+          <div ion-item *ngIf="need.has_or_needs==1">
+            <ion-row>
+                <span style="margin: auto; font-weight: bold;">{{ need.name }}</span>
+            </ion-row>
+            <ion-row>
+              <span style="margin: auto;">Has {{ need.amount }}</span>
+            </ion-row>
+          </div>
+        </ng-container>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  
+
+</ion-content>
+
+
+<!--
   <ion-card *ngIf="user">
     <ion-card-content>
-      <h1>{{ user.title }}</h1>
-      by {{ user.author_name }}, p. {{ user.pages_count }}
+      <h1>{{ user.data.title }}</h1>
       <ion-row>
           <ion-col>
             <h2>id</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ user.id }}</span>
+            <span>{{ user.data.id }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -28,7 +101,7 @@
             <h2>active</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ user.active }}</span>
+            <span>{{ user.data.active }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -36,7 +109,7 @@
             <h2>status</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ user.status }}</span>
+            <span>{{ user.data.status }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -44,7 +117,7 @@
             <h2>created</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ user.created }}</span>
+            <span>{{ user.data.created }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -52,7 +125,7 @@
             <h2>modified</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ user.modified }}</span>
+            <span>{{ user.data.modified }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -60,7 +133,7 @@
             <h2>created_epoch</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ user.created_epoch }}</span>
+            <span>{{ user.data.created_epoch }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -68,87 +141,15 @@
             <h2>modified_epoch</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ user.modified_epoch }}</span>
+            <span>{{ user.data.modified_epoch }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
           <ion-col>
-            <h2>email</h2>
+            <h2>owner</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ user.email }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>password</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ user.password }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>passkey</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ user.passkey }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>timeout</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ user.timeout }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>username</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ user.username }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>first_name</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ user.first_name }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>last_name</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ user.last_name }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>last_contacted</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ user.last_contacted }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>latitude</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ user.latitude }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>longitude</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ user.longitude }}</span>
+            <span>{{ user.data.owner }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -156,7 +157,63 @@
             <h2>ownerg</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ user.ownerg }}</span>
+            <span>{{ user.data.ownerg }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>campaign_id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ user.data.campaign_id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>user_status_id</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ user.data.user_status_id }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>first_name</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ user.data.first_name }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>last_name</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ user.data.last_name }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>latitude</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ user.data.latitude }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>longitude</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ user.data.longitude }}</span>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+            <h2>last_contacted</h2>
+          </ion-col>          
+          <ion-col>
+            <span>{{ user.data.last_contacted }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -164,15 +221,7 @@
             <h2>polygons</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ user.polygons }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>notification_sms</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ user.notification_sms }}</span>
+            <span>{{ user.data.polygons }}</span>
           </ion-col>
         </ion-row>
       <ion-row>
@@ -180,31 +229,23 @@
             <h2>name</h2>
           </ion-col>          
           <ion-col>
-            <span>{{ user.name }}</span>
-          </ion-col>
-        </ion-row>
-      <ion-row>
-          <ion-col>
-            <h2>work_status</h2>
-          </ion-col>          
-          <ion-col>
-            <span>{{ user.work_status }}</span>
+            <span>{{ user.data.name }}</span>
           </ion-col>
         </ion-row>
           </ion-card-content>
     <ion-row>
       <ion-col>
-        <button ion-button icon-left clear small color="secondary" (click)="editUsers(user)">
+        <button ion-button icon-left clear small color="secondary" (click)="editusers(user)">
           <ion-icon name="construct"></ion-icon>
           <div>{{ 'button.edit' | translate }}</div>
         </button>          
       </ion-col>
       <ion-col text-right>
-        <button ion-button icon-left clear small color="danger" (click)="deleteUsers(user)">
+        <button ion-button icon-left clear small color="danger" (click)="deleteusers(user)">
           <ion-icon name="trash"></ion-icon>
           <div>{{ 'button.delete' | translate }}</div>
         </button>          
       </ion-col>
     </ion-row>
   </ion-card>
-</ion-content>
+  -->
