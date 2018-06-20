@@ -13,16 +13,20 @@
     border-color: black;
     border-width: 4px;
     border-radius: 2px;
+    height: 60px;
+    text-align: center;
   }
-  .mapLayerButtonOff{
-    background-color: #c2c4c2;
+  .mapLayerButton{
     color: white;
     border-radius: 2px;
+    height: 60px;
+    text-align: center;
   }
-  .mapLayerButtonOn{
+  .on{
     background-color: #42aaf4;
-    color: white;
-    border-radius: 2px;
+  }
+  .off{
+    background-color: #c2c4c2;
   }
   .mapItButton{
     background-color: #048e10;
@@ -31,6 +35,7 @@
     width: 49%;
     margin-right: 2%;
     text-align: center;
+    height: 60px;
   }
   .removeButton{
     background-color: red;
@@ -38,6 +43,7 @@
     border-radius: 2px;
     width: 49%;
     text-align: center;
+    height: 60px;
   }
 </style>
 <ion-header>
@@ -56,7 +62,7 @@
           <div ion-item *ngFor="let map of campaign.maps">
             <button ion-item no-lines class="toggle" (click)="toggle(map.id)">{{ map.name }}</button>
             <div ion-item no-lines *ngFor="let group of map.groups" id="div_{{map.id}}" style="display: none;">
-              <button ion-item no-lines (click)="mapitHelper(group)" class="mapLayerButtonOff" id="{{ group.id }}">{{ group.name }}</button>
+              <button ion-item no-lines (click)="mapitHelper(group)" class="mapLayerButton off" id="{{ group.id }}">{{ group.name }}</button>
               <!--<input [value]="group.id" type="checkbox" ng-model="selected[group.id]"> {{ group.name }} -->
             </div>
           </div>

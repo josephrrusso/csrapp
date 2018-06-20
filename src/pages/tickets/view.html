@@ -3,6 +3,21 @@
   #map {
     height: 100%;
   }
+  .hasorneeds{
+    width: auto;
+    height: auto;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    margin-bottom: 2px;
+  }
+  .needs{
+    background-color: #f47373;
+  }
+  .has{
+    background-color: #17c43a;
+  }
 </style>
 
 <ion-header>
@@ -23,8 +38,8 @@
 
   <ion-card *ngIf="ticket">
 
-    <ion-card-header style="background-color: #d9d9db;">
-      <h1>Datapoints</h1>
+    <ion-card-header style="background-color: black;">
+      <h1 style="color: white;">Datapoints</h1>
     </ion-card-header>
 
     <ion-card-content style="padding-top: 6px;">
@@ -52,14 +67,14 @@
 
   <ion-card *ngIf="ticket">
 
-    <ion-card-header style="background-color: #d9d9db;">
-      <h1>Needs</h1>
+    <ion-card-header style="background-color: black;">
+      <h1 style="color: white;">Needs</h1>
     </ion-card-header>
 
     <ion-card-content>
       <ion-list style="padding-top: 6px;">
         <ng-container *ngFor="let need of ticket.needs">
-          <div ion-item *ngIf="need.has_or_needs==0" style="background-color: #f47373; width: auto; height: auto; border-color: black; border-style: solid; border-radius: 5px; border-width: 1px; margin-bottom: 2px;">
+          <div ion-item *ngIf="need.has_or_needs==0" class="hasorneeds needs">
             <ion-row>
                 <span style="margin: auto; font-weight: bold;">{{ need.name }}</span>
             </ion-row>
@@ -67,7 +82,7 @@
               <span style="margin: auto;">Needs {{ need.amount }}</span>
             </ion-row>
           </div>
-          <div ion-item *ngIf="need.has_or_needs==1">
+          <div ion-item *ngIf="need.has_or_needs==1" class="hasorneeds has">
             <ion-row>
                 <span style="margin: auto; font-weight: bold;">{{ need.name }}</span>
             </ion-row>
