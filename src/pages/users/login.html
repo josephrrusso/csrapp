@@ -46,10 +46,10 @@
             <ion-input type="password" formControlName="password"></ion-input>
           </ion-item>
 
-          <button margin-top ion-button type="submit" [disabled]="!loginData.valid">{{ 'button.login' | translate }}</button>
+          <button margin-top ion-button type="submit" style="width: 290px; margin-left: 15px;" [disabled]="!loginData.valid">{{ 'button.login' | translate }}</button>
 
         </form>
-    
+        <!--
         <ion-row padding-top>
           <ion-col>
             <button ion-button clear block (click)="openPage('RegisterPage')">{{ 'button.new_registration' | translate }}</button>
@@ -58,6 +58,7 @@
             <button ion-button clear block (click)="openPage('ForgotPage')">{{ 'button.forgotten_password' | translate }}</button>
           </ion-col>
         </ion-row>
+        -->
         
       </ion-col>
 

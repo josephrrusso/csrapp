@@ -92,5 +92,8 @@ export class UsersInfoPage extends ProtectedPage {
       .then(() => this.navCtrl.pop())
       .catch(e => console.log("Delete user error", e)); 
   }
+  notification() {
+    this.navCtrl.push('NotificationsPage');
+  }
 }
 

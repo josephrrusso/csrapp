@@ -92,5 +92,9 @@ export class LocationsInfoPage extends ProtectedPage {
       .then(() => this.navCtrl.pop())
       .catch(e => console.log("Delete location error", e)); 
   }
+
+  notification() {
+    this.navCtrl.push('NotificationsPage');
+  }
 }
 

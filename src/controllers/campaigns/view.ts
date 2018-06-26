@@ -176,18 +176,18 @@ export class CampaignsInfoPage extends ProtectedPage {
 
   mapitHelper(group) {
     var button = $("#"+ group.id)[0];
-    if ($(button).hasClass('mapLayerButtonOff')) {
-
-        button.className = "mapLayerButtonOn item item-block item-md activated";
-        var input = document.createElement("input");
-        input.type = "hidden"; input.className = "hiddenInput"; input.value = group.id; input.id = "input_" + group.id;
-        var div = $(".finder")[0];
-        div.appendChild(input);
-
+    if ($("#" + group.id).hasClass("off")){
+      $("#" + group.id).removeClass("off");
+      $("#" + group.id).addClass("on");
+      var input = document.createElement("input");
+      input.type = "hidden"; input.className = "hiddenInput"; input.value = group.id; input.id = "input_" + group.id;
+      var div = $(".finder")[0];
+      div.appendChild(input);
     } else {
-        var input2 = $("#input_" + group.id)[0];
+      var input2 = $("#input_" + group.id)[0];
         input2.parentNode.removeChild(input2);
-        button.className = "mapLayerButtonOff item item-block item-md activated";
+        $("#" + group.id).removeClass("on");
+        $("#" + group.id).addClass("off");
     }
 
   }
@@ -197,8 +197,15 @@ export class CampaignsInfoPage extends ProtectedPage {
     for (var i = inputs.length - 1; i >= 0; i--) {
       inputs[i].parentNode.removeChild(inputs[i]);
       button = $("#"+ inputs[i].value)[0];
-      button.className = "mapLayerButtonOff item item-block item-md activated";
+      //console.log(button);
+      $("#" + button.id).removeClass("on");
+      $("#" + button.id).addClass("off");
+      //button.className = "mapLayerButtonOff item item-block item-md activated";
     }
+  }
+
+  notification() {
+    this.navCtrl.push('NotificationsPage');
   }
 }
 
