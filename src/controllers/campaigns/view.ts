@@ -175,9 +175,8 @@ export class CampaignsInfoPage extends ProtectedPage {
   }
 
   mapitHelper(group) {
-    //console.log(stuff);
     var button = $("#"+ group.id)[0];
-    if (button.className == "mapLayerButtonOff item item-block item-md activated"){
+    if ($(button).hasClass('mapLayerButtonOff')) {
 
         button.className = "mapLayerButtonOn item item-block item-md activated";
         var input = document.createElement("input");
@@ -195,7 +194,6 @@ export class CampaignsInfoPage extends ProtectedPage {
   removeHelper(){
     var inputs = $(".hiddenInput");
     var button;
-    console.log(inputs);
     for (var i = inputs.length - 1; i >= 0; i--) {
       inputs[i].parentNode.removeChild(inputs[i]);
       button = $("#"+ inputs[i].value)[0];
