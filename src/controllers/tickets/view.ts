@@ -93,6 +93,8 @@ export class TicketsInfoPage extends ProtectedPage {
       .catch(e => console.log("Delete ticket error", e)); 
   }
 
-
+  notification() {
+    this.navCtrl.push('NotificationsPage');
+  }
 }
 

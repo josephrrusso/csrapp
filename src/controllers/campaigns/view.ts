@@ -205,5 +205,9 @@ export class CampaignsInfoPage extends ProtectedPage {
       //button.className = "mapLayerButtonOff item item-block item-md activated";
     }
   }
+
+  notification() {
+    this.navCtrl.push('NotificationsPage');
+  }
 }
 

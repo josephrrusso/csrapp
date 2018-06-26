@@ -1,5 +1,10 @@
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 <style>
+.top-right{
+	position: absolute;
+	right: 10%;
+	top: 10%;
+}
 </style>
 
 <ion-header>
@@ -8,6 +13,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>    
     <ion-title>{{ 'page.campaigns.list' | translate }}</ion-title>
+    <div class="fa fa-3x fa-bell top-right" (click)="notification()"></div>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
