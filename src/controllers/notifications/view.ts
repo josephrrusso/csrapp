@@ -37,5 +37,9 @@ export class NotificationsInfoPage extends ProtectedPage {
       .then(() => this.navCtrl.pop())
       .catch(e => console.log("Delete notification error", e)); 
   }
+
+  notifications() {
+    this.navCtrl.push('NotificationsPage');
+  }
 }
 

@@ -39,4 +39,7 @@ export class NotificationsPage extends ProtectedPage {
   openPage(page: string) {
     this.navCtrl.push(page);
   }
+  notification() {
+    this.navCtrl.push('NotificationsPage');
+  }
 }

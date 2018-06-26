@@ -23,7 +23,9 @@ export class RegisterPage {
     public authService: AuthService) {
 
     this.regData = this.formBuilder.group({
-      name: ['', Validators.required],
+      first_name: ['', Validators.required],
+      last_name: ['', Validators.required],
+      active: 1,
       email: ['', Validators.required],
       password: ['', Validators.required],
       confirm_password: ['', Validators.required]

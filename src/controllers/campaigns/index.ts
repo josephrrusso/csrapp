@@ -36,6 +36,10 @@ export class CampaignsPage extends ProtectedPage {
     this.navCtrl.push('CampaignsInfoPage', {campaign: campaign});
   }
 
+  notification() {
+    this.navCtrl.push('NotificationsPage');
+  }
+
   openPage(page: string) {
     this.navCtrl.push(page);
   }
