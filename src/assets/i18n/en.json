@@ -32,7 +32,7 @@
 		"needFulfillmentStages" : { "list" : "My  Need Fulfillment Stages", "add": "Add  Need Fulfillment Stages", "edit" : "Edit  Need Fulfillment Stages", "preview": "Preview" },
 		"groupTypes" : { "list" : "My  Group Types", "add": "Add  Group Types", "edit" : "Edit  Group Types", "preview": "Preview" },
 		"locations" : { "list" : "My  Locations", "add": "Add  Locations", "edit" : "Edit  Locations", "preview": "Preview" },
-		"users" : { "list" : "My  Users", "add": "Add  Users", "edit" : "Edit  Users", "preview": "Preview" },
+		"users" : { "list" : "My  Users", "add": "Add  Users", "edit" : "Edit  Users", "preview": "Preview", "privacy": "Privacy Policy", "terms": "Terms of Service" },
 		"needTypeFulfillmentStages" : { "list" : "My  Need Type Fulfillment Stages", "add": "Add  Need Type Fulfillment Stages", "edit" : "Edit  Need Type Fulfillment Stages", "preview": "Preview" },
 		"grantDatapoints" : { "list" : "My  Grant Datapoints", "add": "Add  Grant Datapoints", "edit" : "Edit  Grant Datapoints", "preview": "Preview" },
 		"userRoles" : { "list" : "My  User Roles", "add": "Add  User Roles", "edit" : "Edit  User Roles", "preview": "Preview" },

@@ -1,9 +1,8 @@
 
 import {Injectable} from '@angular/core';
 import {AuthHttp} from 'angular2-jwt';
-import {Http, Headers, RequestOptions} from '@angular/http';
+import {Http} from '@angular/http';
 import {Storage} from '@ionic/storage';
-import {GeoModel} from '../models/geo.model';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import *  as AppConfig from '../app/config';

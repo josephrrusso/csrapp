@@ -1,8 +1,5 @@
 import {NavController, NavParams} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
-import { Geolocation } from '@ionic-native/geolocation';
-import { AlertController } from 'ionic-angular'
-import {AuthService} from '../../providers/auth-service';
 
 export class ProtectedPage {
 

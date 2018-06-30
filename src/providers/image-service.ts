@@ -3,8 +3,7 @@ import {Http} from '@angular/http';
 import {Storage} from '@ionic/storage';
 import 'rxjs/add/operator/toPromise';
 import {ImageModel} from '../models/image.model';
-import {AuthHttp, JwtHelper, tokenNotExpired} from 'angular2-jwt';
-import {Observable} from 'rxjs/Rx';
+import {AuthHttp, JwtHelper} from 'angular2-jwt';
 import *  as AppConfig from '../app/config';
 
 @Injectable()

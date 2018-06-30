@@ -1,6 +1,6 @@
 {
   "name": "crowdsourcerescue",
-  "app_id": "",
+  "app_id": "com.crowdsourcerescue.rescueapp",
   "integrations": {
     "cordova": {}
   },

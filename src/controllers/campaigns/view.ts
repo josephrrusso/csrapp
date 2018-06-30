@@ -175,7 +175,6 @@ export class CampaignsInfoPage extends ProtectedPage {
   }
 
   mapitHelper(group) {
-    var button = $("#"+ group.id)[0];
     if ($("#" + group.id).hasClass("off")){
       $("#" + group.id).removeClass("off");
       $("#" + group.id).addClass("on");

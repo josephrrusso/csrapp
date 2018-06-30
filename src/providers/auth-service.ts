@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 import {UsersModel} from '../models/users.model';
 import {CredentialsModel} from '../models/credentials.model';
 import {AuthHttp, JwtHelper, tokenNotExpired} from 'angular2-jwt';
-import {Observable} from 'rxjs/Rx';
+//import {Observable} from 'rxjs/Rx';
 import *  as AppConfig from '../app/config';
 
 @Injectable()

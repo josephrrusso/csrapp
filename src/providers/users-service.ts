@@ -1,7 +1,7 @@
 
 import {Injectable} from '@angular/core';
 import {AuthHttp} from 'angular2-jwt';
-import {Http, Headers, RequestOptions} from '@angular/http';
+import {Http} from '@angular/http';
 import {Storage} from '@ionic/storage';
 import {UsersModel} from '../models/users.model';
 import 'rxjs/add/operator/map';

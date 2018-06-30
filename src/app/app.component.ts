@@ -33,7 +33,9 @@ export class MyApp {
       {title: 'page.campaigns.list', component: 'CampaignsPage'},
       //{title: 'page.tickets.list', component: 'TicketsPage'},
       //{title: 'page.locations.list', component: 'LocationsPage'},
-      {title: 'page.logout', component: 'LoginPage', method: 'logout'}
+      {title: 'page.logout', component: 'LoginPage', method: 'logout'},
+      {title: 'page.users.privacy', component: 'UsersPrivacyPage'},
+      {title: 'page.users.terms', component: 'UsersTermsPage'}
     ];
   }
 
