@@ -5,6 +5,8 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {AuthService} from '../providers/auth-service';
 import {TranslateService} from '@ngx-translate/core';
 import {GeoService} from '../providers/geo-service';
+import { AlertController } from 'ionic-angular';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -22,7 +24,9 @@ export class MyApp {
     public splashScreen: SplashScreen,
     public authService: AuthService,
     public geoService: GeoService,
-    translate: TranslateService) {
+    translate: TranslateService,
+    alertCtrl: AlertController
+    ) {
 
     this.initializeApp();
 

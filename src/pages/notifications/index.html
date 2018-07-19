@@ -17,7 +17,6 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <button ion-button block (click)="openPage('NotificationsAddPage')">{{ 'button.add_notification' | translate }}</button>
   <ion-list *ngIf="notifications">
     <button ion-item  *ngFor="let notification of notifications" (click)="notificationInfo(notification)">{{ notification.title }}</button>
   </ion-list>

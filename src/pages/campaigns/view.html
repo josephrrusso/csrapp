@@ -14,6 +14,7 @@
     height: 100%;
   }
   .toggle{
+    /*
     background-color: black;
     color: white;
     border-style: solid;
@@ -22,8 +23,10 @@
     border-radius: 2px;
     height: 60px;
     text-align: center;
+    */
   }
   .mapLayerButton{
+
     color: white;
     border-radius: 2px;
     height: 60px;
@@ -39,8 +42,7 @@
     background-color: #048e10;
     color: white;
     border-radius: 2px;
-    width: 49%;
-    margin-right: 2%;
+    width: 100%;
     text-align: center;
     height: 60px;
   }
@@ -51,6 +53,12 @@
     width: 49%;
     text-align: center;
     height: 60px;
+  }
+  .dn {
+    display: none;
+  }
+  .dib {
+    display: inline-block;
   }
 </style>
 <ion-header>
@@ -68,17 +76,24 @@
       <div id="mapchecks_{{campaign.id}}" class="finder">
         <ion-list>
           <div ion-item *ngFor="let map of campaign.maps">
-            <button ion-item no-lines class="toggle" (click)="toggle(map.id)">{{ map.name }}</button>
+            <div ion-item no-lines class="toggle" (click)="toggle(map.id)">
+              <div class="toggleiconmapgroup{{map.id}} dib"><ion-icon name="arrow-dropdown"></ion-icon></div>
+              <div class="toggleiconmapgroup{{map.id}} dn"><ion-icon name="arrow-dropup"></ion-icon></div>
+              <span>{{ map.name }}</span>
+            </div>
             <div ion-item no-lines *ngFor="let group of map.groups" id="div_{{map.id}}" style="display: none;">
-              <button ion-item no-lines (click)="mapitHelper(group)" class="mapLayerButton off" id="{{ group.id }}">{{ group.name }}</button>
+              <button ion-item no-lines (click)="mapitHelper(group)" class="mapLayerButton off" id="group{{ group.id }}">
+                <div class="toggleiconmap{{group.id}} dn"><ion-icon name="checkbox-outline"></ion-icon></div>
+                <div class="toggleiconmap{{group.id}} dib"><ion-icon name="square-outline"></ion-icon></div>
+                <span>{{ group.name }}</span>
+              </button>
               <!--<input [value]="group.id" type="checkbox" ng-model="selected[group.id]"> {{ group.name }} -->
             </div>
           </div>
         </ion-list>
       </div>
       <div ion-row style="margin-bottom: 2px;">
-        <button ion-item no-lines (click)="mapit(campaign.id)" class="mapItButton">Map It!</button>
-        <button ion-item no-lines (click)="deleteMarkers()" class="removeButton">Remove</button>
+        <button ion-item no-lines (click)="mapit(campaign.id)" class="mapItButton">Display on Map</button>
       </div>
       
     </div>

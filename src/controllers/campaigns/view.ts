@@ -106,11 +106,12 @@ export class CampaignsInfoPage extends ProtectedPage {
   deleteMarkers() {
     this.clearMarkers();
     this.markers = [];
-    this.removeHelper();
+    //this.removeHelper();
   }
 
   mapit(campaign_id) {
     //this.loadMap();
+    this.deleteMarkers();
     var el = $("#mapchecks_"+campaign_id);
     var checkedMaps = [];
     $(el).closest(".container").find("input:hidden").each(function() {
@@ -128,6 +129,35 @@ export class CampaignsInfoPage extends ProtectedPage {
       )
       .catch(e => console.log("Delete campaign error", e));
     }
+  }
+
+  mapitHelper(group) {
+    if ($("#group" + group.id).hasClass("off")){
+      $("#group" + group.id).removeClass("off");
+      $("#group" + group.id).addClass("on");
+      var input = document.createElement("input");
+      input.type = "hidden"; input.className = "hiddenInput"; input.value = group.id; input.id = "input_" + group.id;
+      var div = $(".finder")[0];
+      div.appendChild(input);
+    } else {
+      var input2 = $("#input_" + group.id)[0];
+      if (input2){
+        input2.parentNode.removeChild(input2);
+        $("#group" + group.id).removeClass("on");
+        $("#group" + group.id).addClass("off");
+      }
+    }
+
+    $(".toggleiconmap"+group.id).each(function() {
+      if ($(this).hasClass('dn')) {
+        $(this).removeClass('dn');
+        $(this).addClass('dib');
+      }      
+      else {
+        $(this).addClass('dn');
+        $(this).removeClass('dib');
+      }
+    });
   }
  
   loadMap() {
@@ -172,33 +202,26 @@ export class CampaignsInfoPage extends ProtectedPage {
 
   toggle(id) {
     $("#div_" + id).toggle();
-  }
-
-  mapitHelper(group) {
-    if ($("#" + group.id).hasClass("off")){
-      $("#" + group.id).removeClass("off");
-      $("#" + group.id).addClass("on");
-      var input = document.createElement("input");
-      input.type = "hidden"; input.className = "hiddenInput"; input.value = group.id; input.id = "input_" + group.id;
-      var div = $(".finder")[0];
-      div.appendChild(input);
-    } else {
-      var input2 = $("#input_" + group.id)[0];
-        input2.parentNode.removeChild(input2);
-        $("#" + group.id).removeClass("on");
-        $("#" + group.id).addClass("off");
-    }
-
+    $(".toggleiconmapgroup"+id).each(function() {
+      if ($(this).hasClass('dn')) {
+        $(this).removeClass('dn');
+        $(this).addClass('dib');
+      }      
+      else {
+        $(this).addClass('dn');
+        $(this).removeClass('dib');
+      }
+    });
   }
   removeHelper(){
     var inputs = $(".hiddenInput");
     var button;
     for (var i = inputs.length - 1; i >= 0; i--) {
       inputs[i].parentNode.removeChild(inputs[i]);
-      button = $("#"+ inputs[i].value)[0];
+      button = $("#group"+ inputs[i].value)[0];
       //console.log(button);
-      $("#" + button.id).removeClass("on");
-      $("#" + button.id).addClass("off");
+      $("#group" + button.id).removeClass("on");
+      $("#group" + button.id).addClass("off");
       //button.className = "mapLayerButtonOff item item-block item-md activated";
     }
   }

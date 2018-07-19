@@ -8,6 +8,14 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import *  as AppConfig from '../app/config';
 
+/*
+interface AuthHttpExtended extends AuthHttp {
+    extensionProperty: string
+}
+
+export { AuthHttpExtended as AuthHttp }
+*/
+
 @Injectable()
 export class NotificationsService {
 
@@ -21,7 +29,8 @@ export class NotificationsService {
   }
 
   index() {    
-    return this.authHttp.get(this.cfg.apiUrl + this.route)
+    //return this.authHttp.get(this.cfg.apiUrl + this.route)
+    return this.http.get(this.cfg.apiUrl + this.route)
       .toPromise()
       .then(rs => {
         return rs.json();

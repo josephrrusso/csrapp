@@ -3,7 +3,7 @@ import {ErrorHandler, NgModule} from '@angular/core';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {IonicStorageModule} from '@ionic/storage';
 import {MyApp} from './app.component';
-import {HttpModule, Http} from '@angular/http';
+import {HttpModule, Http, XHRBackend, RequestOptions} from '@angular/http';
 import {AuthHttp, AuthConfig,JwtHelper} from 'angular2-jwt';
 import {Storage} from '@ionic/storage';
 import {GeoService} from '../providers/geo-service';
@@ -31,6 +31,10 @@ import {TasksService} from '../providers/tasks-service';
 import {TicketsService} from '../providers/tickets-service';
 import {UsersService} from '../providers/users-service';
 import {UserTicketsService} from '../providers/userTickets-service';
+
+import {httpFactory} from "./http.factory";
+import { AlertController } from 'ionic-angular';
+
 
 let storage = new Storage({});
 
@@ -80,6 +84,11 @@ export function createTranslateLoader(http: Http) {
       provide: AuthHttp,
       useFactory: getAuthHttp,
       deps: [Http]
+    },
+    {
+      provide: Http,
+      useFactory: httpFactory,
+      deps: [XHRBackend, RequestOptions]
     },
     FileTransfer,
     FileTransferObject,
