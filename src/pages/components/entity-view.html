@@ -1,0 +1,125 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+<style>
+  #map {
+    height: 90%;
+    width: 90%;
+    border: solid 5px black;
+    min-height: 500px;
+  }
+  .hasorneeds{
+    width: auto;
+    height: auto;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    /*border-radius: 5px;*/
+    border-bottom-width: 1px;
+    margin-bottom: 2px;
+  }
+  .needs{
+    /*background-color: #f47373;*/
+  }
+  .has{
+    /*background-color: #17c43a;*/
+  }
+  .top-right{
+    position: absolute;
+    right: 10%;
+    top: 10%
+  }
+</style>
+
+
+<div>
+	<ion-card>
+		<ion-card-header style="background-color: black;">
+			<h1 *ngIf="entity" style="color:white">{{ entity.data.entity.first_name }} {{ entity.data.entity.last_name }}</h1>
+		</ion-card-header>
+
+		<ion-card-content style="padding-top: 6px;">
+			<div #map id="map"></div>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card *ngIf="datapoints && datapoints.length">
+		<ion-card-header style="background-color: black;">
+			<h1 style="color: white;">Datapoints</h1>
+		</ion-card-header>
+
+		<ion-card-content style="padding-top: 6px;">
+			<ion-list>
+				<ng-container *ngFor="let datapoint of datapoints">
+					<div ion-item>
+						<ion-row>
+							<span style="margin: auto; font-weight: bold;">{{ datapoint.name }}</span>
+						</ion-row>
+						<div *ngIf="datapoint.data && datapoint.data.length">
+							<ion-row *ngIf="datapoint.data[0].value_numeric">
+								<span style="margin: auto;">{{ datapoint.data[0].value_numeric }}</span>
+							</ion-row>
+							<ion-row *ngIf="datapoint.data[0].value_boolean">
+								<span style="margin: auto;">{{ datapoint.data[0].value_boolean }}</span>
+							</ion-row>
+							<ion-row *ngIf="datapoint.data[0].value_option">
+								<span style="margin: auto;">{{ datapoint.data[0].value_option }}</span>
+							</ion-row>
+							<ion-row *ngIf="datapoint.data[0].value_text">
+								<span style="margin: auto;">{{ datapoint.data[0].value_text }}</span>
+							</ion-row>
+						</div>
+						<div *ngIf="!datapoint.data || !datapoint.data.length">
+							<ion-row>
+								<span style="margin: auto; color:rgb(205,205,205);font-style: italic;">No data</span>
+							</ion-row>
+						</div>
+					</div>
+				</ng-container>
+			</ion-list>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card *ngIf="needs && needs.length">
+		<ion-card-header style="background-color: black;">
+			<h1 style="color: white;">Needs</h1>
+		</ion-card-header>
+
+		<ion-card-content>
+			<ion-list style="padding-top: 6px;">
+				<ng-container *ngFor="let need of needs">
+					<div *ngIf="need.data && need.data.length">
+						<div ion-item class="hasorneeds needs">
+							<ion-row>
+								<span style="margin: auto; font-weight: bold;">{{ need.name }}</span>
+							</ion-row>
+							<ion-row>
+								<span style="margin: auto;">Needs {{ need.amount }}</span>
+							</ion-row>
+						</div>
+					</div>
+				</ng-container>
+			</ion-list>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card *ngIf="inventory && inventory.length">
+		<ion-card-header style="background-color: black;">
+			<h1 style="color: white;">Inventory</h1>
+		</ion-card-header>
+
+		<ion-card-content>
+			<ion-list style="padding-top: 6px;">
+				<ng-container *ngFor="let need of inventory">
+					<div *ngIf="need.data && need.data.length">
+						<div ion-item class="hasorneeds has">
+							<ion-row>
+								<span style="margin: auto; font-weight: bold;">{{ need.name }}</span>
+							</ion-row>
+							<ion-row>
+								<span style="margin: auto;">Has {{ need.amount }}</span>
+							</ion-row>
+						</div>
+					</div>
+				</ng-container>
+			</ion-list>
+		</ion-card-content>
+	</ion-card>
+</div>

@@ -42,9 +42,15 @@
             <ion-input type="password" formControlName="confirm_password"></ion-input>
           </ion-item>
 
-          <button margin-top ion-button type="submit" [disabled]="!regData.valid">{{ 'button.register' | translate  }}</button>
+          <div style="text-align: center;">
+            <button margin-top ion-button type="submit" style="width: 75%; margin-left: 15px;" [disabled]="!regData.valid">{{ 'button.register' | translate  }}</button>
+          </div>
 
         </form>
+        <div style="text-align: center; margin-top: 50px;">
+          <button ion-button clear block (click)="backToLogin()">{{ 'button.backlogin' | translate }}</button>
+        </div>
+        <div id='accountregisterfailure' style="text-align: center; color: red; font-style: italic; margin-top: 20px;"></div>
 
       </ion-col>
     </ion-row>

@@ -21,7 +21,7 @@ export class GroupsService {
   }
 
   membershipapi(id: number) {    
-    return this.authHttp.get(this.cfg.apiUrl + this.route + '/membershipapi/' + id)
+    return this.http.get(this.cfg.apiUrl + this.route + '/membershipapi/' + id)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -30,7 +30,7 @@ export class GroupsService {
   }
 
   index() {    
-    return this.authHttp.get(this.cfg.apiUrl + this.route)
+    return this.http.get(this.cfg.apiUrl + this.route)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -39,7 +39,7 @@ export class GroupsService {
   }
 
   view(id: number) {
-    return this.authHttp.get(this.cfg.apiUrl + this.route + '/' + id)
+    return this.http.get(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
         return rs.json().group;
@@ -48,7 +48,7 @@ export class GroupsService {
   }
 
   add(group: GroupsModel) {
-    return this.authHttp.post(this.cfg.apiUrl + this.route, group)
+    return this.http.post(this.cfg.apiUrl + this.route, group)
       .toPromise()
       .then(() => {
         return true;
@@ -57,7 +57,7 @@ export class GroupsService {
   }
 
   edit(group: GroupsModel) {
-    return this.authHttp.put(this.cfg.apiUrl + this.route + '/' + group.id, group)
+    return this.http.put(this.cfg.apiUrl + this.route + '/' + group.id, group)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -66,7 +66,7 @@ export class GroupsService {
   }
 
   delete(id: number) {
-    return this.authHttp.delete(this.cfg.apiUrl + this.route + '/' + id)
+    return this.http.delete(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
         return rs.json();

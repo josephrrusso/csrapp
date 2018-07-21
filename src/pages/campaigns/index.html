@@ -19,6 +19,7 @@
 <ion-content padding>
   <ion-list *ngIf="campaigns">
     <button ion-item  *ngFor="let campaign of campaigns" (click)="campaignInfo(campaign)">{{ campaign.name }}</button>
+    <button ion-item  *ngIf="!campaigns.length">You are not currently involved in any campaigns.</button>
   </ion-list>
 </ion-content>
 

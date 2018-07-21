@@ -21,7 +21,7 @@ export class FormsService {
   }
 
   index() {    
-    return this.authHttp.get(this.cfg.apiUrl + this.route)
+    return this.http.get(this.cfg.apiUrl + this.route)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -30,7 +30,7 @@ export class FormsService {
   }
 
   view(id: number) {
-    return this.authHttp.get(this.cfg.apiUrl + this.route + '/' + id)
+    return this.http.get(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
         return rs.json().form;
@@ -39,7 +39,7 @@ export class FormsService {
   }
 
   add(form: FormsModel) {
-    return this.authHttp.post(this.cfg.apiUrl + this.route, form)
+    return this.http.post(this.cfg.apiUrl + this.route, form)
       .toPromise()
       .then(() => {
         return true;
@@ -48,7 +48,7 @@ export class FormsService {
   }
 
   edit(form: FormsModel) {
-    return this.authHttp.put(this.cfg.apiUrl + this.route + '/' + form.id, form)
+    return this.http.put(this.cfg.apiUrl + this.route + '/' + form.id, form)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -57,7 +57,7 @@ export class FormsService {
   }
 
   delete(id: number) {
-    return this.authHttp.delete(this.cfg.apiUrl + this.route + '/' + id)
+    return this.http.delete(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
         return rs.json();

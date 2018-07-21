@@ -21,7 +21,7 @@ export class SmsMessagesService {
   }
 
   index() {    
-    return this.authHttp.get(this.cfg.apiUrl + this.route)
+    return this.http.get(this.cfg.apiUrl + this.route)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -30,7 +30,7 @@ export class SmsMessagesService {
   }
 
   view(id: number) {
-    return this.authHttp.get(this.cfg.apiUrl + this.route + '/' + id)
+    return this.http.get(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
         return rs.json().smsMessage;
@@ -39,7 +39,7 @@ export class SmsMessagesService {
   }
 
   add(smsMessage: SmsMessagesModel) {
-    return this.authHttp.post(this.cfg.apiUrl + this.route, smsMessage)
+    return this.http.post(this.cfg.apiUrl + this.route, smsMessage)
       .toPromise()
       .then(() => {
         return true;
@@ -48,7 +48,7 @@ export class SmsMessagesService {
   }
 
   edit(smsMessage: SmsMessagesModel) {
-    return this.authHttp.put(this.cfg.apiUrl + this.route + '/' + smsMessage.id, smsMessage)
+    return this.http.put(this.cfg.apiUrl + this.route + '/' + smsMessage.id, smsMessage)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -57,7 +57,7 @@ export class SmsMessagesService {
   }
 
   delete(id: number) {
-    return this.authHttp.delete(this.cfg.apiUrl + this.route + '/' + id)
+    return this.http.delete(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
         return rs.json();

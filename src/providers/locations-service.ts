@@ -21,7 +21,7 @@ export class LocationsService {
   }
 
   index() {    
-    return this.authHttp.get(this.cfg.apiUrl + this.route)
+    return this.http.get(this.cfg.apiUrl + this.route)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -29,8 +29,8 @@ export class LocationsService {
       .catch(e => console.log("View locations error", e));
   }
 
-  view(id: number) {
-    return this.authHttp.get(this.cfg.apiUrl + this.route + '/' + id)
+  view(id: number, campaign_id: number) {
+    return this.http.get(this.cfg.apiUrl + this.route + '/' + id + '?scope_campaigns=' + campaign_id)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -39,7 +39,7 @@ export class LocationsService {
   }
 
   add(location: LocationsModel) {
-    return this.authHttp.post(this.cfg.apiUrl + this.route, location)
+    return this.http.post(this.cfg.apiUrl + this.route, location)
       .toPromise()
       .then(() => {
         return true;
@@ -48,7 +48,7 @@ export class LocationsService {
   }
 
   edit(location: LocationsModel) {
-    return this.authHttp.put(this.cfg.apiUrl + this.route + '/' + location.id, location)
+    return this.http.put(this.cfg.apiUrl + this.route + '/' + location.id, location)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -57,7 +57,7 @@ export class LocationsService {
   }
 
   delete(id: number) {
-    return this.authHttp.delete(this.cfg.apiUrl + this.route + '/' + id)
+    return this.http.delete(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
         return rs.json();

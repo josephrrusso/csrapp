@@ -21,7 +21,7 @@ export class OrganizationsService {
   }
 
   index() {    
-    return this.authHttp.get(this.cfg.apiUrl + this.route)
+    return this.http.get(this.cfg.apiUrl + this.route)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -30,7 +30,7 @@ export class OrganizationsService {
   }
 
   view(id: number) {
-    return this.authHttp.get(this.cfg.apiUrl + this.route + '/' + id)
+    return this.http.get(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
         return rs.json().organization;
@@ -39,7 +39,7 @@ export class OrganizationsService {
   }
 
   add(organization: OrganizationsModel) {
-    return this.authHttp.post(this.cfg.apiUrl + this.route, organization)
+    return this.http.post(this.cfg.apiUrl + this.route, organization)
       .toPromise()
       .then(() => {
         return true;
@@ -48,7 +48,7 @@ export class OrganizationsService {
   }
 
   edit(organization: OrganizationsModel) {
-    return this.authHttp.put(this.cfg.apiUrl + this.route + '/' + organization.id, organization)
+    return this.http.put(this.cfg.apiUrl + this.route + '/' + organization.id, organization)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -57,7 +57,7 @@ export class OrganizationsService {
   }
 
   delete(id: number) {
-    return this.authHttp.delete(this.cfg.apiUrl + this.route + '/' + id)
+    return this.http.delete(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
         return rs.json();

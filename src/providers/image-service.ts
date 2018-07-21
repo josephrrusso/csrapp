@@ -27,7 +27,7 @@ export class ImageService {
   }
 
   send(imageData: ImageModel) {
-    return this.authHttp.post(this.cfg.apiUrl + '/users/image', imageData)
+    return this.http.post(this.cfg.apiUrl + '/users/image', imageData)
       .toPromise()
       .then(data => {
         console.log(data)

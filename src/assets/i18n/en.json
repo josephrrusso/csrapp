@@ -11,6 +11,7 @@
   },
   "button" : {
     "login" : "Login",
+    "backlogin" : "Back to Login",
     "register" : "Register",
     "new_registration" : "New registration",
     "forgotten_password" : "Forgotten password?",

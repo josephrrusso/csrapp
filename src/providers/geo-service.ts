@@ -23,7 +23,7 @@ export class GeoService {
   geo() {
     this.geolocation.getCurrentPosition().then((position) => {
 
-      return this.authHttp.post(this.cfg.apiUrl + this.route + "/geo", {latitude: position.coords.latitude, longitude: position.coords.longitude})
+      return this.http.post(this.cfg.apiUrl + this.route + "/geo", {latitude: position.coords.latitude, longitude: position.coords.longitude})
       .toPromise()
       .then(() => {
         return true;
@@ -34,7 +34,7 @@ export class GeoService {
     (err) => {
 
       /*
-      return this.authHttp.post(this.cfg.apiUrl + this.route + "/geo", {latitude: 0, longitude: 0})
+      return this.http.post(this.cfg.apiUrl + this.route + "/geo", {latitude: 0, longitude: 0})
       .toPromise()
       .then(() => {
         return true;

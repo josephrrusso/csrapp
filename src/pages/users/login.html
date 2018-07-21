@@ -45,20 +45,28 @@
             <ion-label floating>{{ 'label.password' | translate }}:</ion-label>
             <ion-input type="password" formControlName="password"></ion-input>
           </ion-item>
-
-          <button margin-top ion-button type="submit" style="width: 290px; margin-left: 15px;" [disabled]="!loginData.valid">{{ 'button.login' | translate }}</button>
+          <div style="text-align: center;">
+            <button margin-top ion-button type="submit" style="width: 75%; margin-left: 15px;" >{{ 'button.login' | translate }}</button>
+          </div>
 
         </form>
-        <!--
+        
+
+        <div style="text-align: center;">
+          <button ion-button clear block (click)="openPage('UsersRegisterPage')">{{ 'button.new_registration' | translate }}</button>
+        </div>
+
         <ion-row padding-top>
           <ion-col>
-            <button ion-button clear block (click)="openPage('RegisterPage')">{{ 'button.new_registration' | translate }}</button>
+
           </ion-col>
+          <!--
           <ion-col>
-            <button ion-button clear block (click)="openPage('ForgotPage')">{{ 'button.forgotten_password' | translate }}</button>
+            
+              <button ion-button clear block (click)="openPage('ForgotPage')">{{ 'button.forgotten_password' | translate }}</button>
           </ion-col>
-        </ion-row>
         -->
+        </ion-row>
         
       </ion-col>
 

@@ -38,11 +38,53 @@ export class UsersRegisterPage {
     this.menuCtrl.enable(false);
   }
 
+  /*
   register() {
     
     this.authService.register(this.regData.value)
       .then(() => this.navCtrl.setRoot('ProfilePage'))
       .catch(e => console.log("reg error", e));
+  }
+  */
+
+
+  register() {
+    //use this.loginData.value to authenticate the user
+    this.authService.register(this.regData.value)
+      .then(rs => {
+        if (!rs.success) {
+          //$("#accountregisterfailure").text("Account registration failed. Is there already an account associated with this email?");
+          var number = document.getElementById("accountregisterfailure");
+          number.innerHTML = "Account registration failed. Is there already an account associated with this email?";
+        }
+        else {
+          this.storage.set("id_token", rs.data.token)
+          .then(() => {
+            this.storage.set("expiry", rs.exp)
+            .then(() => {
+              this.storage.set("user", rs.data.user)
+              .then(() => {
+                this.redirectToHome();
+              })
+              .catch(e => console.log('login error', e));
+            })
+            .catch(e => console.log('login error', e));
+          })
+          .catch(e => console.log('login error', e));
+        }
+      })
+      .catch(e => console.log("login error", e));
+  }
+
+
+  redirectToHome() {
+    this.navCtrl.setRoot('CampaignsPage');
+    this.menuCtrl.enable(true);
+  }
+
+  backToLogin() {
+    this.navCtrl.setRoot('LoginPage');
+    //this.navCtrl.pop();
   }
 
 }

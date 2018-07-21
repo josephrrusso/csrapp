@@ -79,15 +79,15 @@ export class CampaignsInfoPage extends ProtectedPage {
   }
 
   viewTicket(id) {
-    this.navCtrl.push('TicketsInfoPage', {ticket_id: id});
+    this.navCtrl.push('TicketsInfoPage', {ticket_id: id, campaign_id: this.campaign.id});
   }
 
   viewUser(id) {
-    this.navCtrl.push('UsersInfoPage', {user_id: id});
+    this.navCtrl.push('UsersInfoPage', {user_id: id, campaign_id: this.campaign.id});
   }
 
   viewLocation(id) {
-    this.navCtrl.push('LocationsInfoPage', {location_id: id});
+    this.navCtrl.push('LocationsInfoPage', {location_id: id, campaign_id: this.campaign.id});
   }
 
   // Sets the map on all markers in the array.
@@ -162,30 +162,35 @@ export class CampaignsInfoPage extends ProtectedPage {
  
   loadMap() {
     
-    this.geolocation.getCurrentPosition().then((position) => {
-      console.log(this.geolocation);
-      let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
- 
-      let mapOptions = {
-        center: latLng,
-        zoom: 8,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      }
- 
-      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-    }, (err) => {
-      console.log(err.code);
-      console.log(err.message);
-      let latLng = new google.maps.LatLng(29.35, -95.75);
- 
-      let mapOptions = {
-        center: latLng,
-        zoom: 8,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      }
+    if (window.navigator.onLine) {
+      this.geolocation.getCurrentPosition().then((position) => {
+        console.log(this.geolocation);
+        let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
    
-      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-    });
+        let mapOptions = {
+          center: latLng,
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+   
+        this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+      }, (err) => {
+        console.log(err.code);
+        console.log(err.message);
+        let latLng = new google.maps.LatLng(29.35, -95.75);
+   
+        let mapOptions = {
+          center: latLng,
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+     
+        this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+      });
+    }
+    else {
+      alert('No internet connection detected. Please check internet connection and try again.')
+    }
   }
 
 

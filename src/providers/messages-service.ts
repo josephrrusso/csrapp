@@ -21,7 +21,7 @@ export class MessagesService {
   }
 
   index() {    
-    return this.authHttp.get(this.cfg.apiUrl + this.route)
+    return this.http.get(this.cfg.apiUrl + this.route)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -30,7 +30,7 @@ export class MessagesService {
   }
 
   view(id: number) {
-    return this.authHttp.get(this.cfg.apiUrl + this.route + '/' + id)
+    return this.http.get(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
         return rs.json().message;
@@ -39,7 +39,7 @@ export class MessagesService {
   }
 
   add(message: MessagesModel) {
-    return this.authHttp.post(this.cfg.apiUrl + this.route, message)
+    return this.http.post(this.cfg.apiUrl + this.route, message)
       .toPromise()
       .then(() => {
         return true;
@@ -48,7 +48,7 @@ export class MessagesService {
   }
 
   edit(message: MessagesModel) {
-    return this.authHttp.put(this.cfg.apiUrl + this.route + '/' + message.id, message)
+    return this.http.put(this.cfg.apiUrl + this.route + '/' + message.id, message)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -57,7 +57,7 @@ export class MessagesService {
   }
 
   delete(id: number) {
-    return this.authHttp.delete(this.cfg.apiUrl + this.route + '/' + id)
+    return this.http.delete(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
         return rs.json();

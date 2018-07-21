@@ -21,7 +21,7 @@ export class CampaignsService {
   }
 
   index() {    
-    return this.authHttp.get(this.cfg.apiUrl + this.route)
+    return this.http.get(this.cfg.apiUrl + this.route)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -30,7 +30,7 @@ export class CampaignsService {
   }
 
   view(id: number) {
-    return this.authHttp.get(this.cfg.apiUrl + this.route + '/' + id)
+    return this.http.get(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
         return rs.json().campaign;
@@ -39,7 +39,7 @@ export class CampaignsService {
   }
 
   add(campaign: CampaignsModel) {
-    return this.authHttp.post(this.cfg.apiUrl + this.route, campaign)
+    return this.http.post(this.cfg.apiUrl + this.route, campaign)
       .toPromise()
       .then(() => {
         return true;
@@ -48,7 +48,7 @@ export class CampaignsService {
   }
 
   edit(campaign: CampaignsModel) {
-    return this.authHttp.put(this.cfg.apiUrl + this.route + '/' + campaign.id, campaign)
+    return this.http.put(this.cfg.apiUrl + this.route + '/' + campaign.id, campaign)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -57,7 +57,7 @@ export class CampaignsService {
   }
 
   delete(id: number) {
-    return this.authHttp.delete(this.cfg.apiUrl + this.route + '/' + id)
+    return this.http.delete(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
         return rs.json();

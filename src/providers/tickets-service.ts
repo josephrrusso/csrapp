@@ -21,7 +21,7 @@ export class TicketsService {
   }
 
   index() {    
-    return this.authHttp.get(this.cfg.apiUrl + this.route)
+    return this.http.get(this.cfg.apiUrl + this.route)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -29,8 +29,8 @@ export class TicketsService {
       .catch(e => console.log("View tickets error", e));
   }
 
-  view(id: number) {
-    return this.authHttp.get(this.cfg.apiUrl + this.route + '/' + id)
+  view(id: number, campaign_id: number) {
+    return this.http.get(this.cfg.apiUrl + this.route + '/' + id + '?scope_campaigns=' + campaign_id)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -39,7 +39,7 @@ export class TicketsService {
   }
 
   add(ticket: TicketsModel) {
-    return this.authHttp.post(this.cfg.apiUrl + this.route, ticket)
+    return this.http.post(this.cfg.apiUrl + this.route, ticket)
       .toPromise()
       .then(() => {
         return true;
@@ -48,7 +48,7 @@ export class TicketsService {
   }
 
   edit(ticket: TicketsModel) {
-    return this.authHttp.put(this.cfg.apiUrl + this.route + '/' + ticket.id, ticket)
+    return this.http.put(this.cfg.apiUrl + this.route + '/' + ticket.id, ticket)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -57,7 +57,7 @@ export class TicketsService {
   }
 
   delete(id: number) {
-    return this.authHttp.delete(this.cfg.apiUrl + this.route + '/' + id)
+    return this.http.delete(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
         return rs.json();

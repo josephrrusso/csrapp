@@ -15,27 +15,47 @@ export class InterceptedHttp extends Http {
         super(backend, defaultOptions);
     }
 
+    /*
+    noauthget(url: string, options?: RequestOptionsArgs): Observable<Response> {
+        return Observable.fromPromise (
+            this.getRequestOptionArgsNoAuth()
+        ).mergeMap((options) => { 
+            return super.get(url, options) 
+        });
+    }
+    noauthpost(url: string, body: string, options?: RequestOptionsArgs): Observable<Response> {   
+        return Observable.fromPromise (
+            this.getRequestOptionArgsNoAuth()
+        ).mergeMap((options) => { return super.post(url, body, options) })
+    }
+    */
+
     get(url: string, options?: RequestOptionsArgs): Observable<Response> {
         return Observable.fromPromise (
-            this.getRequestOptionArgs()
+            this.getRequestOptionArgs(options)
         ).mergeMap((options) => { return super.get(url, options) });
     }
 
     post(url: string, body: string, options?: RequestOptionsArgs): Observable<Response> {   
         return Observable.fromPromise (
-            this.getRequestOptionArgs()
+            this.getRequestOptionArgs(options)
         ).mergeMap((options) => { return super.post(url, body, options) })
     }
 
     put(url: string, body: string, options?: RequestOptionsArgs): Observable<Response> {
         return Observable.fromPromise (
-            this.getRequestOptionArgs()
-        ).mergeMap((options) => { return super.put(url, body, options) })
+            this.getRequestOptionArgs(options)
+        ).mergeMap((options) => { 
+            return super.put(url, body, options) 
+        })
     }
 
     delete(url: string, options?: RequestOptionsArgs): Observable<Response> {
-        url = this.updateUrl(url);
-        return super.delete(url, this.getRequestOptionArgs(options));
+        return Observable.fromPromise (
+            this.getRequestOptionArgs(options)
+        ).mergeMap((options) => { 
+            return super.delete(url, options) 
+        })
     }
     
     private updateUrl(req: string) {
@@ -68,6 +88,27 @@ export class InterceptedHttp extends Http {
 
             return options;  
         })
+    }    
+
+    getRequestOptionArgsNoAuth(options?: RequestOptionsArgs) {
+        return storage.get('id_token')
+        .then((token) => {
+            if (!window.navigator.onLine) {
+                // if there is no internet, throw a HttpErrorResponse error
+                // since an error is thrown, the function will terminate here
+                //return Observable.throw(new HttpErrorResponse({ error: 'Internet is required.' }));
+                console.log('no internet')
+                alert("No internet connection detected. Please check internet connection and try again.")
+
+            } else {
+
+            }
+            if (options == null) {
+                options = new RequestOptions();
+            }
+
+            return options;  
+        })
     }
 
     /*
@@ -83,6 +124,13 @@ export class InterceptedHttp extends Http {
         console.log(this.idToken);
 
         return options;
+    }
+
+
+    Example of original: 
+    delete(url: string, options?: RequestOptionsArgs): Observable<Response> {
+        url = this.updateUrl(url);
+        return super.delete(url, this.getRequestOptionArgs(options));
     }
     */
 }

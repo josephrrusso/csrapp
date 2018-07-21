@@ -21,7 +21,7 @@ export class TasksService {
   }
 
   index() {    
-    return this.authHttp.get(this.cfg.apiUrl + this.route)
+    return this.http.get(this.cfg.apiUrl + this.route)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -30,7 +30,7 @@ export class TasksService {
   }
 
   view(id: number) {
-    return this.authHttp.get(this.cfg.apiUrl + this.route + '/' + id)
+    return this.http.get(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
         return rs.json().task;
@@ -39,7 +39,7 @@ export class TasksService {
   }
 
   add(task: TasksModel) {
-    return this.authHttp.post(this.cfg.apiUrl + this.route, task)
+    return this.http.post(this.cfg.apiUrl + this.route, task)
       .toPromise()
       .then(() => {
         return true;
@@ -48,7 +48,7 @@ export class TasksService {
   }
 
   edit(task: TasksModel) {
-    return this.authHttp.put(this.cfg.apiUrl + this.route + '/' + task.id, task)
+    return this.http.put(this.cfg.apiUrl + this.route + '/' + task.id, task)
       .toPromise()
       .then(rs => {
         return rs.json();
@@ -57,7 +57,7 @@ export class TasksService {
   }
 
   delete(id: number) {
-    return this.authHttp.delete(this.cfg.apiUrl + this.route + '/' + id)
+    return this.http.delete(this.cfg.apiUrl + this.route + '/' + id)
       .toPromise()
       .then(rs => {
         return rs.json();

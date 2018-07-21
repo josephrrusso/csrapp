@@ -1,31 +1,11 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-<style>
-  #map {
-    height: 100%;
-  }
-  .hasorneeds{
-    width: auto;
-    height: auto;
-    border-color: black;
-    border-style: solid;
-    border-radius: 5px;
-    border-width: 1px;
-    margin-bottom: 2px;
-  }
-  .needs{
-    background-color: #f47373;
-  }
-  .has{
-    background-color: #17c43a;
-  }
-  .top-right{
+<style type="text/css">
+   .top-right{
     position: absolute;
     right: 10%;
     top: 10%;
   }
 </style>
-
-
 
 <ion-header>
   <ion-navbar>
@@ -38,69 +18,8 @@
 </ion-header>
 <ion-content padding>
   <div *ngIf="location">
-    <h1>{{ location.data.name }}</h1>
+    <entity-view [entity]="location"></entity-view>
   </div>
-  <div #map id="map" style="width: 90%;"></div>
-
-  <ion-card *ngIf="location">
-
-    <ion-card-header style="background-color: black;">
-      <h1 style="color: white;">Datapoints</h1>
-    </ion-card-header>
-
-    <ion-card-content style="padding-top: 6px;">
-      <ion-list>
-        <div ion-item *ngFor="let datapoint of location.datapoints">
-          <ion-row>
-              <span style="margin: auto; font-weight: bold;">{{ datapoint.datapoint_name }}</span>
-          </ion-row>
-          <ion-row *ngIf="datapoint.value_numeric">
-            <span style="margin: auto;">{{ datapoint.value_numeric }}</span>
-          </ion-row>
-          <ion-row *ngIf="datapoint.value_boolean">
-            <span style="margin: auto;">{{ datapoint.value_boolean }}</span>
-          </ion-row>
-          <ion-row *ngIf="datapoint.value_option">
-            <span style="margin: auto;">{{ datapoint.value_option }}</span>
-          </ion-row>
-          <ion-row *ngIf="datapoint.value_text">
-            <span style="margin: auto;">{{ datapoint.value_text }}</span>
-          </ion-row>
-        </div>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card *ngIf="location">
-
-    <ion-card-header style="background-color: black;">
-      <h1 style="color: white;">Needs</h1>
-    </ion-card-header>
-
-    <ion-card-content>
-      <ion-list style="padding-top: 6px;">
-        <ng-container *ngFor="let need of location.needs">
-          <div ion-item *ngIf="need.has_or_needs==0" class="hasorneeds needs">
-            <ion-row>
-                <span style="margin: auto; font-weight: bold;">{{ need.name }}</span>
-            </ion-row>
-            <ion-row>
-              <span style="margin: auto;">Needs {{ need.amount }}</span>
-            </ion-row>
-          </div>
-          <div ion-item *ngIf="need.has_or_needs==1" class="hasorneeds has">
-            <ion-row>
-                <span style="margin: auto; font-weight: bold;">{{ need.name }}</span>
-            </ion-row>
-            <ion-row>
-              <span style="margin: auto;">Has {{ need.amount }}</span>
-            </ion-row>
-          </div>
-        </ng-container>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  
 
 </ion-content>
 
