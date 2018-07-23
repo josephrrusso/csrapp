@@ -1,3 +1,11 @@
+/*
+
+https://scotch.io/@kashyapmukkamala/using-http-interceptor-with-angular2
+
+
+*/
+
+
 import { Component, Input, ViewChild, ElementRef } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation';
 

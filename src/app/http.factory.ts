@@ -5,6 +5,6 @@ import { AlertController } from 'ionic-angular';
 
 
 
-export function httpFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions, alertCtrl: AlertController): Http {
-    return new InterceptedHttp(xhrBackend, requestOptions, alertCtrl);
+export function httpFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions): Http {
+    return new InterceptedHttp(xhrBackend, requestOptions);
 }

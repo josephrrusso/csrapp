@@ -44,6 +44,22 @@ export class CampaignsInfoPage extends ProtectedPage {
 
   ionViewDidLoad(){
     this.loadMap();
+
+    /*
+    let alert = this.alertCtrl.create({
+        title: 'No Internet',
+        subTitle: 'Please reconnect to the internet and try again.',
+        buttons: [{
+            text: 'OK',
+            handler: () => {
+                alert.dismiss().then(() => {  });
+                return false;
+            }
+        }]
+    });
+
+    alert.present();
+    */
   }
 
   dropMarker(map, latitude, longitude, item, group) {

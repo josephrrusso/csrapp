@@ -61,6 +61,14 @@
   .dib {
     display: inline-block;
   }
+  .mapicon {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 </style>
 <ion-header>
   <ion-navbar>
@@ -86,6 +94,7 @@
               <button ion-item no-lines (click)="mapitHelper(group)" class="mapLayerButton off" id="group{{ group.id }}">
                 <div class="toggleiconmap{{group.id}} dn"><ion-icon name="checkbox-outline"></ion-icon></div>
                 <div class="toggleiconmap{{group.id}} dib"><ion-icon name="square-outline"></ion-icon></div>
+                <img class='mapicon' src='{{group.icon}}' />
                 <span>{{ group.name }}</span>
               </button>
               <!--<input [value]="group.id" type="checkbox" ng-model="selected[group.id]"> {{ group.name }} -->
