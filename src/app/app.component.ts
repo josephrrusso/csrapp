@@ -51,11 +51,11 @@ export class MyApp {
       this.splashScreen.hide();
       //this.authService.startupTokenRefresh();
 
-      /*
+      
       setInterval(() => { 
          this.geoService.geo();
-      }, 30000);
-      */
+      }, 120000);
+      
     });
   }
 
