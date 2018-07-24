@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="1" android-versionName="1.0.1" id="com.crowdsourcerescue.crowdsourcerescue" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="2" android-versionName="1.0.2" id="com.crowdsourcerescue.crowdsourcerescue" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Crowdsource Rescue</name>
     <description>The CSR Rescue App</description>
     <author email="natedl98@gmail.com" href="http://crowdsourcerescue.com">Nathan Larson</author>
@@ -44,6 +44,12 @@
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
     </platform>
     <platform name="ios">
+        <config-file parent="NSPhotoLibraryUsageDescription" platform="ios" target="*-Info.plist">
+            <string>You can upload item images or images of the situation on the ground using your Photo Library</string>
+        </config-file>
+        <config-file parent="NSCameraUsageDescription" platform="ios" target="*-Info.plist">
+            <string>You can upload item images or images of the situation on the ground using your camera</string>
+        </config-file>
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
