@@ -2,7 +2,7 @@
   "name": "apigen-starter",
   "version": "0.0.1",
   "author": "Nate Larson",
-  "homepage": "http://toxic.digital",
+  "homepage": "http://crowdsourcerescue.com",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -42,7 +42,6 @@
     "cordova-plugin-file-transfer": "^1.7.1",
     "cordova-plugin-filepath": "^1.3.0",
     "cordova-plugin-geolocation": "^4.0.1",
-    "cordova-plugin-mauron85-background-geolocation": "^2.3.5",
     "cordova-plugin-splashscreen": "^4.1.0",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
@@ -87,17 +86,7 @@
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-filepath": {},
-      "cordova-plugin-geolocation": {},
-      "cordova-plugin-mauron85-background-geolocation": {
-        "GOOGLE_PLAY_SERVICES_VERSION": "11+",
-        "ANDROID_SUPPORT_LIBRARY_VERSION": "23+",
-        "ICON": "@mipmap/icon",
-        "SMALL_ICON": "@mipmap/icon",
-        "ACCOUNT_NAME": "@string/app_name",
-        "ACCOUNT_LABEL": "@string/app_name",
-        "ACCOUNT_TYPE": "$PACKAGE_NAME.account",
-        "CONTENT_AUTHORITY": "$PACKAGE_NAME"
-      }
+      "cordova-plugin-geolocation": {}
     },
     "platforms": [
       "android",
