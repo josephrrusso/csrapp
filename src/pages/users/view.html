@@ -15,11 +15,6 @@
   .has{
     background-color: #17c43a;
   }
-  .top-right{
-    position: absolute;
-    right: 10%;
-    top: 10%;
-  }
 </style>
 
 
@@ -30,7 +25,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>    
     <ion-title *ngIf="user">{{ user.data.first_name }} {{ user.data.last_name }}</ion-title>
-    <div class="fa fa-3x fa-bell top-right" (click)="notification()"></div>
+    <ion-buttons end><div class="fa fa-2x fa-bell top-right" (click)="notification()"></div></ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content padding>

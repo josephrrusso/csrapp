@@ -49,10 +49,10 @@ export class ProtectedPage {
               return true;
             }
           })
-          .catch(e => console.log("Page Auth Error", e));
+          .catch(e => console.log("Page Auth Error"));
         }
       })
-      .catch(e => console.log("Page Auth Error", e));
+      .catch(e => console.log("Page Auth Error"));
 
     //return true;
   }

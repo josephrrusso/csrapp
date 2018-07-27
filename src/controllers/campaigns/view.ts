@@ -22,6 +22,8 @@ export class CampaignsInfoPage extends ProtectedPage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   public markers: any;
+  mybounds: any;
+  bounds: any;
 
   private campaign: CampaignsModel;
 
@@ -40,10 +42,13 @@ export class CampaignsInfoPage extends ProtectedPage {
     
     this.campaign = navParams.get('campaign');
     this.markers = [];
+    this.mybounds = new google.maps.LatLngBounds();
+    this.bounds = new google.maps.LatLngBounds();
   }
 
   ionViewDidLoad(){
     this.loadMap();
+    console.log('cv')
 
     /*
     let alert = this.alertCtrl.create({
@@ -133,6 +138,9 @@ export class CampaignsInfoPage extends ProtectedPage {
     $(el).closest(".container").find("input:hidden").each(function() {
       checkedMaps.push($(this).val());
     });
+
+    this.bounds = this.mybounds;
+    
     for (var m in checkedMaps) {
       this.groupsService.membershipapi(checkedMaps[m])
       .then(
@@ -140,10 +148,13 @@ export class CampaignsInfoPage extends ProtectedPage {
           for (var x in results['members']) {
             var m = results['members'][x];
             this.dropMarker(this.map, parseFloat(m['lat']), parseFloat(m['lon']), m, results['group']);
+            var myLatLng = new google.maps.LatLng({lat: parseFloat(m['lat']), lng: parseFloat(m['lon'])});
+            this.bounds.extend(myLatLng);
           }
+          this.map.fitBounds(this.bounds);
         }
       )
-      .catch(e => console.log("Delete campaign error", e));
+      .catch(e => console.log("map error"));
     }
   }
 
@@ -180,7 +191,7 @@ export class CampaignsInfoPage extends ProtectedPage {
     
     if (window.navigator.onLine) {
       this.geolocation.getCurrentPosition().then((position) => {
-        console.log(this.geolocation);
+        console.log('ee');
         let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
    
         let mapOptions = {
@@ -190,9 +201,10 @@ export class CampaignsInfoPage extends ProtectedPage {
         }
    
         this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+        this.mybounds.extend(latLng);
       }, (err) => {
-        console.log(err.code);
-        console.log(err.message);
+        console.log('err');
+        console.log('err');
         let latLng = new google.maps.LatLng(29.35, -95.75);
    
         let mapOptions = {
@@ -202,6 +214,7 @@ export class CampaignsInfoPage extends ProtectedPage {
         }
      
         this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+        this.mybounds.extend(latLng);
       });
     }
     else {
@@ -209,17 +222,6 @@ export class CampaignsInfoPage extends ProtectedPage {
     }
   }
 
-
-  
-  editCampaigns(campaign: CampaignsModel) {
-    this.navCtrl.push('CampaignsEditPage', {campaign: campaign});
-  }
-  
-  deleteCampaigns(campaign: CampaignsModel) {
-    this.campaignsService.delete(campaign.id)
-      .then(() => this.navCtrl.pop())
-      .catch(e => console.log("Delete campaign error", e)); 
-  }
 
   toggle(id) {
     $("#div_" + id).toggle();
