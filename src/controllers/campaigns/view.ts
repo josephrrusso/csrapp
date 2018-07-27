@@ -22,6 +22,7 @@ export class CampaignsInfoPage extends ProtectedPage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   public markers: any;
+  public mapLoaded: boolean = false
 
   private campaign: CampaignsModel;
 
@@ -190,6 +191,7 @@ export class CampaignsInfoPage extends ProtectedPage {
         }
    
         this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+        this.mapLoaded = true
       }, (err) => {
         console.log(err.code);
         console.log(err.message);
@@ -202,6 +204,7 @@ export class CampaignsInfoPage extends ProtectedPage {
         }
      
         this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+        this.mapLoaded = true
       });
     }
     else {
