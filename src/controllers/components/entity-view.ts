@@ -80,7 +80,8 @@ export class EntityViewComponent {
     let mapOptions = {
       center: latLng,
       zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      gestureHandling: 'cooperative'
     }
  
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
