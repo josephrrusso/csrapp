@@ -41,16 +41,7 @@ export class TicketsInfoPage extends ProtectedPage {
   }
 
   ionViewDidLoad() { }
-  
-  editTickets(ticket: TicketsModel) {
-    this.navCtrl.push('TicketsEditPage', {ticket: ticket});
-  }
-  
-  deleteTickets(ticket: TicketsModel) {
-    this.ticketsService.delete(ticket.id)
-      .then(() => this.navCtrl.pop())
-      .catch(e => console.log("Delete ticket error", e)); 
-  }
+
 
   notification() {
     this.navCtrl.push('NotificationsPage');

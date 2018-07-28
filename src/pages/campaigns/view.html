@@ -1,11 +1,5 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-<style>
-.top-right{
-  position: absolute;
-  right: 10%;
-  top: 10%;
-}
-</style>
+
 <style>
   .container {
     height: 100%;
@@ -63,7 +57,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>    
     <ion-title *ngIf="campaign">{{ campaign.name }}</ion-title>
-    <div class="fa fa-3x fa-bell top-right" (click)="notification()"></div>
+    <ion-buttons end><div class="fa fa-2x fa-bell top-right" (click)="notification()"></div></ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
