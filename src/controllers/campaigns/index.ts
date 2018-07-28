@@ -34,6 +34,7 @@ export class CampaignsPage extends ProtectedPage {
       .catch(e => console.log("View campaigns error"));
   }
 
+  /*
   ionViewCanLeave(): boolean {
     if (this.didclick) {
       this.didclick = false;
@@ -41,9 +42,9 @@ export class CampaignsPage extends ProtectedPage {
     }
     return false;
   }
+  */
   
   campaignInfo(campaign: CampaignsModel) {
-    console.log('leaving')
     this.didclick = true;
     //this.navCtrl.push('CampaignsInfoPage', {campaign: campaign});
     this.navCtrl.setRoot('CampaignsInfoPage', {campaign: campaign});

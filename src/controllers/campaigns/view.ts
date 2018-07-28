@@ -46,6 +46,14 @@ export class CampaignsInfoPage extends ProtectedPage {
     this.bounds = new google.maps.LatLngBounds();
   }
 
+  ionViewCanEnter() {
+    console.log('attempt')
+    if (this.campaign) {
+      return true;
+    }
+    return false;
+  }
+
   ionViewDidLoad(){
     this.loadMap();
     console.log('cv')
