@@ -11,7 +11,6 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <button ion-button block (click)="openPage('OrganizationsAddPage')">{{ 'button.add_organization' | translate }}</button>
   <ion-list *ngIf="organizations">
     <button ion-item  *ngFor="let organization of organizations" (click)="organizationInfo(organization)">{{ organization.title }}</button>
   </ion-list>

@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 <style>
   #map {
-    height: 90%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
     border: solid 5px black;
     min-height: 500px;
   }
@@ -35,7 +35,7 @@
 			<h1 *ngIf="entity" style="color:white">{{ entity.data.entity.first_name }} {{ entity.data.entity.last_name }}</h1>
 		</ion-card-header>
 
-		<ion-card-content style="padding-top: 6px;">
+		<ion-card-content style="padding-top: 6px; padding-left: 0px !important; padding-right: 0px !important;">
 			<div #map id="map"></div>
 		</ion-card-content>
 	</ion-card>

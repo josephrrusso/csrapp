@@ -1,11 +1,9 @@
 import {Injectable} from "@angular/core";
-import { ConnectionBackend, RequestOptions, Request, RequestOptionsArgs, Response, Http, Headers} from "@angular/http";
+import { ConnectionBackend, RequestOptions, RequestOptionsArgs, Response, Http, Headers} from "@angular/http";
 import {Observable} from "rxjs/Rx";
 import {Storage} from '@ionic/storage';
-import { AlertController } from 'ionic-angular';
 
 let storage = new Storage({});
-//let alertCtrl = new (AlertController);
 
 
 @Injectable()
