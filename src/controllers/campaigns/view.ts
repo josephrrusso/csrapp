@@ -207,7 +207,8 @@ export class CampaignsInfoPage extends ProtectedPage {
         let mapOptions = {
           center: latLng,
           zoom: 8,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          gestureHandling: 'cooperative'
         }
    
         this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
@@ -221,7 +222,8 @@ export class CampaignsInfoPage extends ProtectedPage {
         let mapOptions = {
           center: latLng,
           zoom: 8,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          gestureHandling: 'cooperative'
         }
      
         this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
