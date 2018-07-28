@@ -22,6 +22,8 @@ export class CampaignsInfoPage extends ProtectedPage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   public markers: any;
+  public mapLoaded: boolean = false
+
   mybounds: any;
   bounds: any;
 
@@ -209,6 +211,7 @@ export class CampaignsInfoPage extends ProtectedPage {
         }
    
         this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+        this.mapLoaded = true
         this.mybounds.extend(latLng);
       }, (err) => {
         console.log('err');
@@ -222,6 +225,7 @@ export class CampaignsInfoPage extends ProtectedPage {
         }
      
         this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+        this.mapLoaded = true
         this.mybounds.extend(latLng);
       });
     }
