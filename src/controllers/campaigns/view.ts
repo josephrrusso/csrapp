@@ -12,7 +12,7 @@ import * as $ from 'jquery'
 
 declare var google;
 
-@IonicPage({ name: 'CampaignsInfo', segment: 'campaigns-info' })
+@IonicPage({ name: 'CampaignsInfoPage', segment: 'campaigns-info-page' })
 @Component({
   selector: 'page-campaign-info-page',
   templateUrl: '../../pages/campaigns/view.html',

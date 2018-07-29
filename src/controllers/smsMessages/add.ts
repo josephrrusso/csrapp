@@ -6,7 +6,7 @@ import {Storage} from '@ionic/storage';
 import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {SmsMessagesService} from '../../providers/smsMessages-service';
 
-@IonicPage({ name: 'SmsMessagesAdd', segment: 'sms-messages-add' })
+@IonicPage({ name: 'SmsMessagesAddPage', segment: 'sms-messages-add-page' })
 @Component({
   selector: 'page-smsMessage-add-page',
   templateUrl: '../../pages/smsMessages/add.html',

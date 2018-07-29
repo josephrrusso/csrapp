@@ -6,7 +6,7 @@ import {Storage} from '@ionic/storage';
 import {FormsService} from '../../providers/forms-service';
 import {FormsModel} from '../../models/forms.model';
 
-@IonicPage({ name: 'FormsInfo', segment: 'forms-info' })
+@IonicPage({ name: 'FormsInfoPage', segment: 'forms-info-page' })
 @Component({
   selector: 'page-form-info-page',
   templateUrl: '../../pages/forms/view.html',

@@ -7,7 +7,7 @@ import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {SmsMessagesService} from '../../providers/smsMessages-service';
 import {SmsMessagesModel} from '../../models/smsMessages.model';
 
-@IonicPage({ name: 'SmsMessagesEdit', segment: 'sms-messages-edit' })
+@IonicPage({ name: 'SmsMessagesEditPage', segment: 'sms-messages-edit-page' })
 @Component({
   selector: 'page-smsMessage-edit-page',
   templateUrl: '../../pages/smsMessages/edit.html',

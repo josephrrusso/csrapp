@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams, MenuController} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 
-@IonicPage({ name: 'UsersPrivacy', segment: 'users-privacy' })
+@IonicPage({ name: 'UsersPrivacyPage', segment: 'users-privacy-page' })
 @Component({
   selector: 'page-user-privacy-page',
   templateUrl: '../../pages/users/privacy.html',

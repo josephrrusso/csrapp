@@ -7,7 +7,7 @@ import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {UserTicketsService} from '../../providers/userTickets-service';
 import {UserTicketsModel} from '../../models/userTickets.model';
 
-@IonicPage({ name: 'UserTicketsEdit', segment: 'user-tickets-edit' })
+@IonicPage({ name: 'UserTicketsEditPage', segment: 'user-tickets-edit-page' })
 @Component({
   selector: 'page-userTicket-edit-page',
   templateUrl: '../../pages/userTickets/edit.html',

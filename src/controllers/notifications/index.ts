@@ -6,7 +6,7 @@ import {Storage} from '@ionic/storage';
 import {NotificationsService} from '../../providers/notifications-service';
 import {NotificationsModel} from '../../models/notifications.model';
 
-@IonicPage({ name: 'Notifications', segment: 'notifications' })
+@IonicPage({ name: 'NotificationsPage', segment: 'notifications-page' })
 @Component({
   selector: 'page-notifications-page',
   templateUrl: '../../pages/notifications/index.html',

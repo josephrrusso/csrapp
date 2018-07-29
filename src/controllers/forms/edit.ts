@@ -7,7 +7,7 @@ import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {FormsService} from '../../providers/forms-service';
 import {FormsModel} from '../../models/forms.model';
 
-@IonicPage({ name: 'FormsEdit', segment: 'forms-edit' })
+@IonicPage({ name: 'FormsEditPage', segment: 'forms-edit-page' })
 @Component({
   selector: 'page-form-edit-page',
   templateUrl: '../../pages/forms/edit.html',

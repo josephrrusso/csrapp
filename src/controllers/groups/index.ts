@@ -6,7 +6,7 @@ import {Storage} from '@ionic/storage';
 import {GroupsService} from '../../providers/groups-service';
 import {GroupsModel} from '../../models/groups.model';
 
-@IonicPage({ name: 'Groups', segment: 'groups' })
+@IonicPage({ name: 'GroupsPage', segment: 'groups-page' })
 @Component({
   selector: 'page-groups-page',
   templateUrl: '../../pages/groups/index.html',
