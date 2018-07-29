@@ -198,7 +198,23 @@ export class CampaignsInfoPage extends ProtectedPage {
   }
  
   loadMap() {
+
+    console.log('err');
+    console.log('err');
+    let latLng = new google.maps.LatLng(29.35, -95.75);
+
+    let mapOptions = {
+      center: latLng,
+      zoom: 8,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      gestureHandling: 'cooperative'
+    }
+ 
+    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+    this.mapLoaded = true
+    this.mybounds.extend(latLng);
     
+    /*
     if (window.navigator.onLine) {
       this.geolocation.getCurrentPosition().then((position) => {
         console.log('ee');
@@ -234,6 +250,7 @@ export class CampaignsInfoPage extends ProtectedPage {
     else {
       alert('No internet connection detected. Please check internet connection and try again.')
     }
+    */
   }
 
 
