@@ -5,7 +5,7 @@ import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {AuthService} from '../../providers/auth-service';
 
 
-@IonicPage()
+@IonicPage({ name: 'UsersRegister', segment: 'users-register' })
 @Component({
   selector: 'page-register-page',
   templateUrl: '../../pages/users/register-page.html',

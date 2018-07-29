@@ -7,7 +7,7 @@ import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {TasksService} from '../../providers/tasks-service';
 import {TasksModel} from '../../models/tasks.model';
 
-@IonicPage()
+@IonicPage({ name: 'TasksEdit', segment: 'tasks-edit' })
 @Component({
   selector: 'page-task-edit-page',
   templateUrl: '../../pages/tasks/edit.html',

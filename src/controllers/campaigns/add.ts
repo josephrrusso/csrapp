@@ -6,7 +6,7 @@ import {Storage} from '@ionic/storage';
 import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {CampaignsService} from '../../providers/campaigns-service';
 
-@IonicPage()
+@IonicPage({ name: 'CampaignsAdd', segment: 'campaigns-add' })
 @Component({
   selector: 'page-campaign-add-page',
   templateUrl: '../../pages/campaigns/add.html',

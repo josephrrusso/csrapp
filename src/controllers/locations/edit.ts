@@ -7,7 +7,7 @@ import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {LocationsService} from '../../providers/locations-service';
 import {LocationsModel} from '../../models/locations.model';
 
-@IonicPage()
+@IonicPage({ name: 'LocationsEdit', segment: 'locations-edit' })
 @Component({
   selector: 'page-location-edit-page',
   templateUrl: '../../pages/locations/edit.html',

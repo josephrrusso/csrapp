@@ -9,7 +9,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 
 declare var google;
 
-@IonicPage()
+@IonicPage({ name: 'UsersInfo', segment: 'users-info' })
 @Component({
   selector: 'page-user-info-page',
   templateUrl: '../../pages/users/view.html',

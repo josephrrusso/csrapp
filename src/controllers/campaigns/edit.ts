@@ -7,7 +7,7 @@ import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {CampaignsService} from '../../providers/campaigns-service';
 import {CampaignsModel} from '../../models/campaigns.model';
 
-@IonicPage()
+@IonicPage({ name: 'CampaignsEdit', segment: 'campaigns-edit' })
 @Component({
   selector: 'page-campaign-edit-page',
   templateUrl: '../../pages/campaigns/edit.html',

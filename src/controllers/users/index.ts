@@ -6,7 +6,7 @@ import {Storage} from '@ionic/storage';
 import {UsersService} from '../../providers/users-service';
 import {UsersModel} from '../../models/users.model';
 
-@IonicPage()
+@IonicPage({ name: 'Users', segment: 'users' })
 @Component({
   selector: 'page-users-page',
   templateUrl: '../../pages/users/index.html',

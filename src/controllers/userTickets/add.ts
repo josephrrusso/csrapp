@@ -6,7 +6,7 @@ import {Storage} from '@ionic/storage';
 import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {UserTicketsService} from '../../providers/userTickets-service';
 
-@IonicPage()
+@IonicPage({ name: 'UserTicketsAdd', segment: 'user-tickets-add' })
 @Component({
   selector: 'page-userTicket-add-page',
   templateUrl: '../../pages/userTickets/add.html',

@@ -7,7 +7,7 @@ import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {NotificationsService} from '../../providers/notifications-service';
 import {NotificationsModel} from '../../models/notifications.model';
 
-@IonicPage()
+@IonicPage({ name: 'NotificationsEdit', segment: 'notifications-edit' })
 @Component({
   selector: 'page-notification-edit-page',
   templateUrl: '../../pages/notifications/edit.html',

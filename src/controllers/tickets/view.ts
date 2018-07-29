@@ -6,7 +6,7 @@ import {TicketsService} from '../../providers/tickets-service';
 import {TicketsModel} from '../../models/tickets.model';
 import { Geolocation } from '@ionic-native/geolocation';
 
-@IonicPage()
+@IonicPage({ name: 'TicketsInfo', segment: 'tickets-info' })
 @Component({
   selector: 'page-ticket-info-page',
   templateUrl: '../../pages/tickets/view.html',

@@ -7,7 +7,7 @@ import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {OrganizationsService} from '../../providers/organizations-service';
 import {OrganizationsModel} from '../../models/organizations.model';
 
-@IonicPage()
+@IonicPage({ name: 'OrganizationsEdit', segment: 'organizations-edit' })
 @Component({
   selector: 'page-organization-edit-page',
   templateUrl: '../../pages/organizations/edit.html',

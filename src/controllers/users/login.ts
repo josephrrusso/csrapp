@@ -6,7 +6,7 @@ import {AuthService} from '../../providers/auth-service';
 
 import {UsersModel} from '../../models/users.model';
 
-@IonicPage()
+@IonicPage({ name: 'Login', segment: 'login' })
 @Component({
   selector: 'page-login-page',
   templateUrl: '../../pages/users/login.html',
