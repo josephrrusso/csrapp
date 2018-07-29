@@ -6,7 +6,7 @@ import {Storage} from '@ionic/storage';
 import {CampaignsService} from '../../providers/campaigns-service';
 import {CampaignsModel} from '../../models/campaigns.model';
 
-@IonicPage({ name: 'CampaignsPage', segment: 'campaigns-page' })
+@IonicPage({ segment: 'campaigns-page' })
 @Component({
   selector: 'page-campaigns-page',
   templateUrl: '../../pages/campaigns/index.html',

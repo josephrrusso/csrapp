@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams, MenuController} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 
-@IonicPage({ name: 'UsersTermsPage', segment: 'users-terms-page' })
+@IonicPage({ segment: 'users-terms-page' })
 @Component({
   selector: 'page-user-terms-page',
   templateUrl: '../../pages/users/terms.html',

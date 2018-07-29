@@ -7,7 +7,7 @@ import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {GroupsService} from '../../providers/groups-service';
 import {GroupsModel} from '../../models/groups.model';
 
-@IonicPage({ name: 'GroupsEditPage', segment: 'groups-edit-page' })
+@IonicPage({ segment: 'groups-edit-page' })
 @Component({
   selector: 'page-group-edit-page',
   templateUrl: '../../pages/groups/edit.html',

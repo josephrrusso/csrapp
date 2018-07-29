@@ -6,7 +6,7 @@ import {Storage} from '@ionic/storage';
 import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {NotificationsService} from '../../providers/notifications-service';
 
-@IonicPage({ name: 'NotificationsAddPage', segment: 'notifications-add-page' })
+@IonicPage({ segment: 'notifications-add-page' })
 @Component({
   selector: 'page-notification-add-page',
   templateUrl: '../../pages/notifications/add.html',

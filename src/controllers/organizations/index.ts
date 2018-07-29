@@ -6,7 +6,7 @@ import {Storage} from '@ionic/storage';
 import {OrganizationsService} from '../../providers/organizations-service';
 import {OrganizationsModel} from '../../models/organizations.model';
 
-@IonicPage({ name: 'OrganizationsPage', segment: 'organizations-page' })
+@IonicPage({ segment: 'organizations-page' })
 @Component({
   selector: 'page-organizations-page',
   templateUrl: '../../pages/organizations/index.html',

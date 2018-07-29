@@ -6,7 +6,7 @@ import {Storage} from '@ionic/storage';
 import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {MessagesService} from '../../providers/messages-service';
 
-@IonicPage({ name: 'MessagesAddPage', segment: 'messages-add-page' })
+@IonicPage({ segment: 'messages-add-page' })
 @Component({
   selector: 'page-message-add-page',
   templateUrl: '../../pages/messages/add.html',

@@ -6,7 +6,7 @@ import {Storage} from '@ionic/storage';
 import {TasksService} from '../../providers/tasks-service';
 import {TasksModel} from '../../models/tasks.model';
 
-@IonicPage({ name: 'TasksInfoPage', segment: 'tasks-info-page' })
+@IonicPage({ segment: 'tasks-info-page' })
 @Component({
   selector: 'page-task-info-page',
   templateUrl: '../../pages/tasks/view.html',

@@ -6,7 +6,7 @@ import {Storage} from '@ionic/storage';
 import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 import {OrganizationsService} from '../../providers/organizations-service';
 
-@IonicPage({ name: 'OrganizationsAddPage', segment: 'organizations-add-page' })
+@IonicPage({ segment: 'organizations-add-page' })
 @Component({
   selector: 'page-organization-add-page',
   templateUrl: '../../pages/organizations/add.html',

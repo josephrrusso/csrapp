@@ -6,7 +6,7 @@ import {Storage} from '@ionic/storage';
 import {LocationsService} from '../../providers/locations-service';
 import {LocationsModel} from '../../models/locations.model';
 
-@IonicPage({ name: 'LocationsPage', segment: 'locations-page' })
+@IonicPage({ segment: 'locations-page' })
 @Component({
   selector: 'page-locations-page',
   templateUrl: '../../pages/locations/index.html',

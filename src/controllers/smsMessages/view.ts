@@ -6,7 +6,7 @@ import {Storage} from '@ionic/storage';
 import {SmsMessagesService} from '../../providers/smsMessages-service';
 import {SmsMessagesModel} from '../../models/smsMessages.model';
 
-@IonicPage({ name: 'SmsMessagesInfoPage', segment: 'sms-messages-info-page' })
+@IonicPage({ segment: 'sms-messages-info-page' })
 @Component({
   selector: 'page-smsMessage-info-page',
   templateUrl: '../../pages/smsMessages/view.html',

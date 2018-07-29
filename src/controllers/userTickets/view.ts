@@ -6,7 +6,7 @@ import {Storage} from '@ionic/storage';
 import {UserTicketsService} from '../../providers/userTickets-service';
 import {UserTicketsModel} from '../../models/userTickets.model';
 
-@IonicPage({ name: 'UserTicketsInfoPage', segment: 'user-tickets-info-page' })
+@IonicPage({ segment: 'user-tickets-info-page' })
 @Component({
   selector: 'page-userTicket-info-page',
   templateUrl: '../../pages/userTickets/view.html',
