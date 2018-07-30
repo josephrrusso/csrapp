@@ -59,7 +59,10 @@ export class AuthService {
          //this.scheduleRefresh();
          //this.getNewJwt();
       })
-      .catch(e => console.log('login error', e));
+      .catch(e => {
+        console.log('login error', e)
+        this.showmodal();
+      });
   }
 
   logout() {
@@ -85,4 +88,42 @@ export class AuthService {
     this.storage.set("expiry", rs.exp);
   }
   */
+
+
+  showmodal() {
+    var existingmodals = document.getElementsByClassName("nointernetmodal");
+    if (existingmodals.length == 0) {
+        var body = document.getElementsByTagName("body")[0];
+
+        var veil = document.createElement('div');
+        veil.setAttribute("style", "position:fixed;top:0px;left:0px;width:100%;height:100%;background-color:rgba(0,0,0,0.7);");
+        veil.setAttribute('onclick', 'this.parentNode.removeChild(this);')
+        veil.setAttribute('class', 'nointernetmodal')
+
+        var modal = document.createElement('div');
+        modal.setAttribute("style", "position:absolute;bottom:0px;left:0px;width:100%;background-color:white;border-top:solid 5px black;");
+        //modal.setAttribute('onclick', 'this.parentNode.removeChild(this);')
+        modal.setAttribute('class', 'nointernetmodal')
+
+        var header = document.createElement('div');
+        header.setAttribute('style', 'font-size: 2.5em;font-weight: bold; color:white; background-color: rgb(25,0,0); text-align: center;')
+        header.innerHTML = "Login Error";
+        modal.appendChild(header);
+
+        var text = document.createElement('span');
+        text.setAttribute('style', 'font-size: 2em; line-height: 55px;')
+        text.innerHTML = "Is this the correct password?";
+        modal.appendChild(text);
+
+        var close = document.createElement('a');
+        //close.setAttribute('onclick', 'this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);')
+        close.setAttribute('style', 'font-size:3em; background-color:#32db64; border-radius:4px; color: white; font-weight: bold; float:right; margin-right: 20px; margin-top:10px; margin-bottom: 10px; padding: 0px 25px 0px 25px;');
+        close.innerHTML = "Close";
+        modal.appendChild(close);
+
+        veil.appendChild(modal);
+        body.appendChild(veil);
+    }
+  }
+
 }
