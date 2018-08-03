@@ -24,8 +24,9 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #000000,
-  secondary:  #32db64,
+  primary:    #155fa1,
+  secondary:  #3615a1,
+  third:    #15a156,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222
@@ -36,7 +37,7 @@ $colors: (
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-$toolbar-background: #000000;
+$toolbar-background: map-get($colors, primary);
 $toolbar-border-color: #000000 !default;
 $toolbar-active-color: #000000 !default;
 
