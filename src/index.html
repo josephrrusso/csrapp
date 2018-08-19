@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
-  <title>CrowdSource<b>Rescue</b></title>
+  <title>CrowdSource Rescue</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
@@ -14,12 +15,42 @@
   <!-- Google Maps API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiufHSVNIdo9eDAIv76DPMMTgZNYmFud0&v=3.exp&libraries=places"></script>
 
+  <!-- Zello API -->
+  <script src="vendor/zello/zcc.sdk.js"></script>
+  <!-- <script src="https://zello.io/sdks/js/0.1/zcc.sdk.js"></script> -->
+  <script>
+    function connect() {
+      ZCC.Sdk.init({
+        player: true,
+        recorder: false,
+        encoder: false,
+        widget: false
+      }).then(function () {
+        window.zelloSession = new ZCC.Session({
+          serverUrl: 'wss://zello.io/ws/btsheehy',
+          channel: '',
+          authToken: '',
+          listen_only: true,
+          username: 'test',
+          password: 'test'
+        });
+
+        session.connect().catch((err) => {
+          console.trace(err);
+        });
+      }).catch(function (err) {
+        console.trace(err);
+      })
+    }
+    connect()
+  </script>
+
   <style>
-    .top-right{
+    .top-right {
       display: inline-block;
     }
   </style>
- 
+
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
 
@@ -35,6 +66,7 @@
   <link href="build/main.css" rel="stylesheet">
 
 </head>
+
 <body>
 
   <!-- Ionic's root component and where the app will load -->
@@ -43,10 +75,11 @@
   <!-- The polyfills js is generated during the build process -->
   <script src="build/polyfills.js"></script>
 
-  <script src="build/vendor.js"></script>
+  <!-- <script src="build/vendor.js"></script> -->
 
   <!-- The bundle js is generated during the build process -->
   <script src="build/main.js"></script>
 
 </body>
+
 </html>
