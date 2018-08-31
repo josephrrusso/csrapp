@@ -53,7 +53,7 @@ export class MyApp {
       
       setInterval(() => { 
          this.geoService.geo();
-      }, 120000);
+      }, 60000);
       
     });
   }

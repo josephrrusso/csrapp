@@ -32,6 +32,13 @@ export class TicketsInfoPage extends ProtectedPage {
 
   }
 
+  ionViewCanEnter() {
+    if (this.ticket_id) {
+      return true;
+    }
+    return false;
+  }
+
   ionViewWillEnter() {
     this.ticketsService.view(this.ticket_id, this.campaign_id)
       .then(ticket => {

@@ -1,0 +1,1324 @@
+[2K[GRunning app-scripts build: --platform android --target cordova
+[17:23:29]  build dev started ... 
+[17:23:29]  clean started ... 
+[17:23:29]  clean finished in 5 ms 
+[17:23:29]  copy started ... 
+[17:23:29]  deeplinks started ... 
+[17:23:29]  deeplinks finished in 192 ms 
+[17:23:29]  transpile started ... 
+[17:23:32]  transpile finished in 2.96 s 
+[17:23:32]  preprocess started ... 
+[17:23:32]  preprocess finished in less than 1 ms 
+[17:23:32]  webpack started ... 
+[17:23:32]  copy finished in 3.25 s 
+[17:23:38]  webpack finished in 5.95 s 
+[17:23:38]  sass started ... 
+[17:23:39]  sass finished in 645 ms 
+[17:23:39]  postprocess started ... 
+[17:23:39]  postprocess finished in 12 ms 
+[17:23:39]  lint started ... 
+[17:23:39]  build dev finished in 9.85 s 
+[2K[G> cordova run android --debug --device
+[2K[G
+You have been opted out of telemetry. To change this, run: cordova telemetry on.
+[2K[GAndroid Studio project detected
+[2K[G
+[2K[GANDROID_HOME=/home/nate/Android/Sdk
+[2K[GJAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+[2K[Gstudio
+[2K[GSubproject Path: CordovaLib
+[2K[GSubproject Path: app
+[2K[GpublishNonDefault is deprecated and has no effect anymore. All variants are now published.
+[2K[GConfiguration 'compile' in project ':app' is deprecated. Use 'implementation' instead.
+[2K[G
+[2K[GThe Task.leftShift(Closure) method has been deprecated and is scheduled to be removed in Gradle 5.0. Please use Task.doLast(Action) instead.
+[2K[G	at build_am6umwhkagxdusr0isfyhx1g0.run(/home/nate/Projects/apps/ionic/csr/platforms/android/app/build.gradle:145)
+[2K[G
+[2K[G:CordovaLib:preBuild
+[2K[G UP-TO-DATE
+[2K[G:CordovaLib:preDebugBuild
+[2K[G UP-TO-DATE
+[2K[G
+[2K[G:CordovaLib:compileDebugAidl
+[2K[G UP-TO-DATE
+:CordovaLib:compileDebugRenderscript UP-TO-DATE
+:CordovaLib:checkDebugManifest UP-TO-DATE
+:CordovaLib:generateDebugBuildConfig UP-TO-DATE
+:CordovaLib:prepareLintJar UP-TO-DATE
+[2K[G:CordovaLib:generateDebugResValues
+[2K[G UP-TO-DATE
+:CordovaLib:generateDebugResources 
+[2K[GUP-TO-DATE
+[2K[G:CordovaLib:packageDebugResources 
+[2K[GUP-TO-DATE
+[2K[G:CordovaLib:platformAttrExtractor
+[2K[G UP-TO-DATE
+[2K[G:CordovaLib:processDebugManifest
+[2K[G UP-TO-DATE
+[2K[G:CordovaLib:processDebugResources
+[2K[G UP-TO-DATE
+[2K[G:CordovaLib:generateDebugSources
+[2K[G UP-TO-DATE
+[2K[G:CordovaLib:javaPreCompileDebug
+[2K[G UP-TO-DATE
+[2K[G
+[2K[G:CordovaLib:compileDebugJavaWithJavac
+[2K[G UP-TO-DATE
+:CordovaLib:processDebugJavaRes NO-SOURCE
+:CordovaLib:transformClassesAndResourcesWithPrepareIntermediateJarsForDebug UP-TO-DATE
+:app:preBuild UP-TO-DATE
+[2K[G:app:preDebugBuild
+[2K[G UP-TO-DATE
+:app:compileDebugAidl
+[2K[G UP-TO-DATE
+:CordovaLib:packageDebugRenderscript NO-SOURCE
+:app:compileDebugRenderscript UP-TO-DATE
+:app:checkDebugManifest UP-TO-DATE
+:app:generateDebugBuildConfig UP-TO-DATE
+:app:prepareLintJar UP-TO-DATE
+:app:generateDebugResValues UP-TO-DATE
+:app:generateDebugResources UP-TO-DATE
+:app:mergeDebugResources
+[2K[G UP-TO-DATE
+:app:createDebugCompatibleScreenManifests UP-TO-DATE
+:app:processDebugManifest
+[2K[G UP-TO-DATE
+:app:splitsDiscoveryTaskDebug UP-TO-DATE
+:app:processDebugResources UP-TO-DATE
+:app:generateDebugSources UP-TO-DATE
+:app:javaPreCompileDebug
+[2K[G UP-TO-DATE
+:app:compileDebugJavaWithJavac
+            Property 'authHttp' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private [41ma[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m: AuthHttp, private http: Http, private storage: Storage, public geolocation: 
+
+            Property 'storage' is declared but never used. 
+
+[2m      L17:  [22mr(private authHttp: AuthHttp, private http: Http, private [41ms[49m[41mt[49m[41mo[49m[41mr[49m[41ma[49m[41mg[49m[41me[49m: Storage, public geolocation: Geolocation)
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {Injectable} from '@angular/core';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22mimport {Http} from '@angular/http';
+
+            All imports on this line are unused. 
+
+[2m       L3:  [22mimport {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Http} from '@angular/http';
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {Http} from '@angular/http';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport 'rxjs/add/operator/map';
+
+            Property 'jwtHelper' is declared but never used. 
+
+[2m      L21:  [22mprivate http: Http,
+[2m      L22:  [22mprivate [41mj[49m[41mw[49m[41mt[49m[41mH[49m[41me[49m[41ml[49m[41mp[49m[41me[49m[41mr[49m:JwtHelper,
+[2m      L23:  [22mprivate authHttp: AuthHttp) {
+
+            Property 'authHttp' is declared but never used. 
+
+[2m      L22:  [22m    private jwtHelper:JwtHelper,
+[2m      L23:  [22m    private [41ma[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m: AuthHttp) {
+
+            All imports on this line are unused. 
+
+[2m       L1:  [22mimport {Injectable} from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Http} from '@angular/http';
+[2m       L3:  [22mimport {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {Http} from '@angular/http';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L4:  [22mimport 'rxjs/add/operator/toPromise';
+
+            'AuthHttp' is declared but never used. 
+
+[2m       L6:  [22mimport {CredentialsModel} from '../models/credentials.model';
+[2m       L7:  [22mimport {[41mA[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m, JwtHelper, tokenNotExpired} from 'angular2-jwt';
+[2m       L8:  [22m//import {Observable} from 'rxjs/Rx';
+
+            'JwtHelper' is declared but never used. 
+
+[2m       L6:  [22mimport {CredentialsModel} from '../models/credentials.model';
+[2m       L7:  [22mimport {AuthHttp, [41mJ[49m[41mw[49m[41mt[49m[41mH[49m[41me[49m[41ml[49m[41mp[49m[41me[49m[41mr[49m, tokenNotExpired} from 'angular2-jwt';
+[2m       L8:  [22m//import {Observable} from 'rxjs/Rx';
+
+            Property 'jwtHelper' is declared but never used. 
+
+[2m      L18:  [22mprivate http: Http,
+[2m      L19:  [22mprivate [41mj[49m[41mw[49m[41mt[49m[41mH[49m[41me[49m[41ml[49m[41mp[49m[41me[49m[41mr[49m:JwtHelper,
+[2m      L20:  [22mprivate authHttp: AuthHttp) {
+
+            Property 'authHttp' is declared but never used. 
+
+[2m      L19:  [22m    private jwtHelper:JwtHelper,
+[2m      L20:  [22m    private [41ma[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m: AuthHttp) {
+
+            All imports on this line are unused. 
+
+[2m       L1:  [22mimport {Injectable} from '@angular/core';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Http} from '@angular/http';
+[2m       L3:  [22mimport {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {Http} from '@angular/http';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L4:  [22mimport 'rxjs/add/operator/toPromise';
+
+            All imports on this line are unused. 
+
+[2m       L5:  [22mimport {ImageModel} from '../models/image.model';
+[2m       L6:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {AuthHttp, JwtHelper} from 'angular2-jwt';
+[2m       L7:  [22mimport *  as AppConfig from '../app/config';
+
+            Property 'authHttp' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private [41ma[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m: AuthHttp, private http: Http, private storage: Storage) {
+
+            Property 'storage' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private authHttp: AuthHttp, private http: Http, private [41ms[49m[41mt[49m[41mo[49m[41mr[49m[41ma[49m[41mg[49m[41me[49m: Storage) {
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {Injectable} from '@angular/core';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22mimport {Http} from '@angular/http';
+
+            All imports on this line are unused. 
+
+[2m       L3:  [22mimport {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Http} from '@angular/http';
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {Http} from '@angular/http';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {CampaignsModel} from '../models/campaigns.model';
+
+            Property 'authHttp' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private [41ma[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m: AuthHttp, private http: Http, private storage: Storage) {
+
+            Property 'storage' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private authHttp: AuthHttp, private http: Http, private [41ms[49m[41mt[49m[41mo[49m[41mr[49m[41ma[49m[41mg[49m[41me[49m: Storage) {
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {Injectable} from '@angular/core';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22mimport {Http} from '@angular/http';
+
+            All imports on this line are unused. 
+
+[2m       L3:  [22mimport {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Http} from '@angular/http';
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {Http} from '@angular/http';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {FormsModel} from '../models/forms.model';
+
+            Property 'authHttp' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private [41ma[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m: AuthHttp, private http: Http, private storage: Storage) {
+
+            Property 'storage' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private authHttp: AuthHttp, private http: Http, private [41ms[49m[41mt[49m[41mo[49m[41mr[49m[41ma[49m[41mg[49m[41me[49m: Storage) {
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {Injectable} from '@angular/core';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22mimport {Http} from '@angular/http';
+
+            All imports on this line are unused. 
+
+[2m       L3:  [22mimport {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Http} from '@angular/http';
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {Http} from '@angular/http';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {GroupsModel} from '../models/groups.model';
+
+            Property 'authHttp' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private [41ma[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m: AuthHttp, private http: Http, private storage: Storage) {
+
+            Property 'storage' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private authHttp: AuthHttp, private http: Http, private [41ms[49m[41mt[49m[41mo[49m[41mr[49m[41ma[49m[41mg[49m[41me[49m: Storage) {
+
+[2K[G UP-TO-DATE
+:app:compileDebugNdk NO-SOURCE
+:app:compileDebugSources UP-TO-DATE
+:CordovaLib:mergeDebugShaders UP-TO-DATE
+:CordovaLib:compileDebugShaders UP-TO-DATE
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {Injectable} from '@angular/core';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22mimport {Http} from '@angular/http';
+
+            All imports on this line are unused. 
+
+[2m       L3:  [22mimport {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Http} from '@angular/http';
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {Http} from '@angular/http';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {LocationsModel} from '../models/locations.model';
+
+            Property 'authHttp' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private [41ma[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m: AuthHttp, private http: Http, private storage: Storage) {
+
+            Property 'storage' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private authHttp: AuthHttp, private http: Http, private [41ms[49m[41mt[49m[41mo[49m[41mr[49m[41ma[49m[41mg[49m[41me[49m: Storage) {
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {Injectable} from '@angular/core';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22mimport {Http} from '@angular/http';
+
+            All imports on this line are unused. 
+
+[2m       L3:  [22mimport {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Http} from '@angular/http';
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {Http} from '@angular/http';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {MessagesModel} from '../models/messages.model';
+
+            Property 'authHttp' is declared but never used. 
+
+[2m      L25:  [22m  constructor(private [41ma[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m: AuthHttp, private http: Http, private storage: Storage) {
+
+            Property 'storage' is declared but never used. 
+
+[2m      L25:  [22m  constructor(private authHttp: AuthHttp, private http: Http, private [41ms[49m[41mt[49m[41mo[49m[41mr[49m[41ma[49m[41mg[49m[41me[49m: Storage) {
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {Injectable} from '@angular/core';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22mimport {Http} from '@angular/http';
+
+            All imports on this line are unused. 
+
+[2m       L3:  [22mimport {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Http} from '@angular/http';
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {Http} from '@angular/http';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {NotificationsModel} from '../models/notifications.model';
+
+            Property 'authHttp' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private [41ma[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m: AuthHttp, private http: Http, private storage: Storage) {
+
+            Property 'storage' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private authHttp: AuthHttp, private http: Http, private [41ms[49m[41mt[49m[41mo[49m[41mr[49m[41ma[49m[41mg[49m[41me[49m: Storage) {
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {Injectable} from '@angular/core';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22mimport {Http} from '@angular/http';
+
+            All imports on this line are unused. 
+
+[2m       L3:  [22mimport {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Http} from '@angular/http';
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {Http} from '@angular/http';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {OrganizationsModel} from '../models/organizations.model';
+
+            Property 'authHttp' is declared but never used. 
+
+[2K[G:CordovaLib:generateDebugAssets
+[2K[G[2m      L17:  [22m  constructor(private [41ma[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m: AuthHttp, private http: Http, private storage: Storage) {
+ 
+
+            Property 'storage' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private authHttp: AuthHttp, private http: Http, private [41ms[49m[41mt[49m[41mo[49m[41mr[49m[41ma[49m[41mg[49m[41me[49m: Storage) {
+
+[2K[GUP-TO-DATE
+:CordovaLib:mergeDebugAssets 
+[2K[GUP-TO-DATE
+            All imports on this line are unused. 
+
+[2K[G:app:mergeDebugShaders
+[2m       L2:  [22mimport {Injectable} from '@angular/core';
+[2K[G 
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22mimport {Http} from '@angular/http';
+[2K[G
+UP-TO-DATE
+[2K[G
+            All imports on this line are unused. 
+
+[2K[G:app:compileDebugShaders
+[2m       L3:  [22mimport {AuthHttp} from 'angular2-jwt';
+[2K[G UP-TO-DATE
+[2K[G:app:generateDebugAssets UP-TO-DATE
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Http} from '@angular/http';
+[2K[G:app:mergeDebugAssets
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {Http} from '@angular/http';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {SmsMessagesModel} from '../models/smsMessages.model';
+
+            Property 'authHttp' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private [41ma[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m: AuthHttp, private http: Http, private storage: Storage) {
+
+            Property 'storage' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private authHttp: AuthHttp, private http: Http, private [41ms[49m[41mt[49m[41mo[49m[41mr[49m[41ma[49m[41mg[49m[41me[49m: Storage) {
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {Injectable} from '@angular/core';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22mimport {Http} from '@angular/http';
+
+            All imports on this line are unused. 
+
+[2m       L3:  [22mimport {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Http} from '@angular/http';
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {Http} from '@angular/http';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {TasksModel} from '../models/tasks.model';
+
+            Property 'authHttp' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private [41ma[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m: AuthHttp, private http: Http, private storage: Storage) {
+
+            Property 'storage' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private authHttp: AuthHttp, private http: Http, private [41ms[49m[41mt[49m[41mo[49m[41mr[49m[41ma[49m[41mg[49m[41me[49m: Storage) {
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {Injectable} from '@angular/core';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22mimport {Http} from '@angular/http';
+
+            All imports on this line are unused. 
+
+[2m       L3:  [22mimport {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Http} from '@angular/http';
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {Http} from '@angular/http';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {TicketsModel} from '../models/tickets.model';
+
+            Property 'authHttp' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private [41ma[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m: AuthHttp, private http: Http, private storage: Storage) {
+
+            Property 'storage' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private authHttp: AuthHttp, private http: Http, private [41ms[49m[41mt[49m[41mo[49m[41mr[49m[41ma[49m[41mg[49m[41me[49m: Storage) {
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {Injectable} from '@angular/core';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22mimport {Http} from '@angular/http';
+
+            All imports on this line are unused. 
+
+[2m       L3:  [22mimport {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Http} from '@angular/http';
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {Http} from '@angular/http';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {UsersModel} from '../models/users.model';
+
+            Property 'authHttp' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private [41ma[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m: AuthHttp, private http: Http, private storage: Storage) {
+
+            Property 'storage' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private authHttp: AuthHttp, private http: Http, private [41ms[49m[41mt[49m[41mo[49m[41mr[49m[41ma[49m[41mg[49m[41me[49m: Storage) {
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {Injectable} from '@angular/core';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22mimport {Http} from '@angular/http';
+
+            All imports on this line are unused. 
+
+[2m       L3:  [22mimport {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Http} from '@angular/http';
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {Http} from '@angular/http';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {UserTicketsModel} from '../models/userTickets.model';
+
+            Property 'authHttp' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private [41ma[49m[41mu[49m[41mt[49m[41mh[49m[41mH[49m[41mt[49m[41mt[49m[41mp[49m: AuthHttp, private http: Http, private storage: Storage) {
+
+            Property 'storage' is declared but never used. 
+
+[2m      L17:  [22m  constructor(private authHttp: AuthHttp, private http: Http, private [41ms[49m[41mt[49m[41mo[49m[41mr[49m[41ma[49m[41mg[49m[41me[49m: Storage) {
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {Injectable} from '@angular/core';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22mimport {Http} from '@angular/http';
+
+            All imports on this line are unused. 
+
+[2m       L3:  [22mimport {AuthHttp} from 'angular2-jwt';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Http} from '@angular/http';
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {Http} from '@angular/http';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {NeedFulfillmentsModel} from '../models/needFulfillments.model';
+
+            All imports on this line are unused. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {NeedFulfillmentsModel} from '../models/needFulfillments.model';
+[2m       L7:  [22mimport 'rxjs/add/operator/map';
+
+            'updateUrl' is declared but never used. 
+
+[2m      L62:  [22m private [41mu[49m[41mp[49m[41md[49m[41ma[49m[41mt[49m[41me[49m[41mU[49m[41mr[49m[41ml[49m(req: string) {
+[2m      L63:  [22m     return req;
+
+            'ConnectionBackend' is declared but never used. 
+
+[2m       L1:  [22mimport {Injectable} from "@angular/core";
+[2m       L2:  [22mimport { [41mC[49m[41mo[49m[41mn[49m[41mn[49m[41me[49m[41mc[49m[41mt[49m[41mi[49m[41mo[49m[41mn[49m[41mB[49m[41ma[49m[41mc[49m[41mk[49m[41me[49m[41mn[49m[41md[49m, RequestOptions, RequestOptionsArgs, Response, Http, Headers} from "@angular/http
+[2m       L3:  [22mimport {Observable} from "rxjs/Rx";
+
+            'RequestOptionsArgs' is declared but never used. 
+
+[2m       L1:  [22mimport {Injectable} from "@angular/core";
+[2m       L2:  [22mimport { ConnectionBackend, RequestOptions, [41mR[49m[41me[49m[41mq[49m[41mu[49m[41me[49m[41ms[49m[41mt[49m[41mO[49m[41mp[49m[41mt[49m[41mi[49m[41mo[49m[41mn[49m[41ms[49m[41mA[49m[41mr[49m[41mg[49m[41ms[49m, Response, Http, Headers} from "@angular/http
+[2m       L3:  [22mimport {Observable} from "rxjs/Rx";
+
+            'Response' is declared but never used. 
+
+[2m       L1:  [22mimport {Injectable} from "@angular/core";
+[2m       L2:  [22mport { ConnectionBackend, RequestOptions, RequestOptionsArgs, [41mR[49m[41me[49m[41ms[49m[41mp[49m[41mo[49m[41mn[49m[41ms[49m[41me[49m, Http, Headers} from "@angular/http";
+[2m       L3:  [22mimport {Observable} from "rxjs/Rx";
+
+            All imports on this line are unused. 
+
+[2m       L1:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {XHRBackend, Http, RequestOptions} from "@angular/http";
+[2m       L2:  [22mimport {InterceptedHttp} from "./http.interceptor";
+
+            All imports on this line are unused. 
+
+[2m      L36:  [22mimport {httpFactory} from "./http.factory";
+[2m      L37:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m { AlertController } from 'ionic-angular';
+
+            'marker' is declared but never used. 
+
+[2m     L180:  [22mvar myLatLng = new google.maps.LatLng({lat: latitude, lng: longitude});
+[2m     L181:  [22mvar [41mm[49m[41ma[49m[41mr[49m[41mk[49m[41me[49m[41mr[49m = new google.maps.Marker({
+[2m     L182:  [22m  position: myLatLng,
+
+            'ElementRef' is declared but never used. 
+
+[2m       L9:  [22mimport { Component, Input, ViewChild, [41mE[49m[41ml[49m[41me[49m[41mm[49m[41me[49m[41mn[49m[41mt[49m[41mR[49m[41me[49m[41mf[49m } from '@angular/core';
+[2m      L10:  [22mimport { Geolocation } from '@ionic-native/geolocation';
+
+            All imports on this line are unused. 
+
+[2m      L11:  [22mimport {NeedFulfillmentsService} from '../../providers/needFulfillments-service';
+[2m      L12:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {NeedFulfillmentsModel} from '../../models/needFulfillments.model';
+
+            'ElementRef' is declared but never used. 
+
+[2m       L1:  [22mimport { Component, Input, ViewChild, [41mE[49m[41ml[49m[41me[49m[41mm[49m[41me[49m[41mn[49m[41mt[49m[41mR[49m[41me[49m[41mf[49m } from '@angular/core';
+
+            All imports on this line are unused. 
+
+[2m       L1:  [22mimport {NavController, NavParams} from 'ionic-angular';
+[2m       L2:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {CampaignsService} from '../../providers/campaigns-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {CampaignsService} from '../../providers/campaigns-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {CampaignsService} from '../../providers/campaigns-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {CampaignsService} from '../../providers/campaigns-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {CampaignsService} from '../../providers/campaigns-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {FormsService} from '../../providers/forms-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {FormsService} from '../../providers/forms-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {FormsService} from '../../providers/forms-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {FormsService} from '../../providers/forms-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {FormsService} from '../../providers/forms-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {FormsService} from '../../providers/forms-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {GroupsService} from '../../providers/groups-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {GroupsService} from '../../providers/groups-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {GroupsService} from '../../providers/groups-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {GroupsService} from '../../providers/groups-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {GroupsService} from '../../providers/groups-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {GroupsService} from '../../providers/groups-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {LocationsService} from '../../providers/locations-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {LocationsService} from '../../providers/locations-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {LocationsService} from '../../providers/locations-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {LocationsService} from '../../providers/locations-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {LocationsService} from '../../providers/locations-service';
+
+            'google' is declared but never used. 
+
+[2m      L10:  [22mdeclare var [41mg[49m[41mo[49m[41mo[49m[41mg[49m[41ml[49m[41me[49m;
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {LocationsService} from '../../providers/locations-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {MessagesService} from '../../providers/messages-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {MessagesService} from '../../providers/messages-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {MessagesService} from '../../providers/messages-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {MessagesService} from '../../providers/messages-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {MessagesService} from '../../providers/messages-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {MessagesService} from '../../providers/messages-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {NotificationsService} from '../../providers/notifications-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {NotificationsService} from '../../providers/notifications-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {NotificationsService} from '../../providers/notifications-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {NotificationsService} from '../../providers/notifications-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {NotificationsService} from '../../providers/notifications-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {NotificationsService} from '../../providers/notifications-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {OrganizationsService} from '../../providers/organizations-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {OrganizationsService} from '../../providers/organizations-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {OrganizationsService} from '../../providers/organizations-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {OrganizationsService} from '../../providers/organizations-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {OrganizationsService} from '../../providers/organizations-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {OrganizationsService} from '../../providers/organizations-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {SmsMessagesService} from '../../providers/smsMessages-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {SmsMessagesService} from '../../providers/smsMessages-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {SmsMessagesService} from '../../providers/smsMessages-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {SmsMessagesService} from '../../providers/smsMessages-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {SmsMessagesService} from '../../providers/smsMessages-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {SmsMessagesService} from '../../providers/smsMessages-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {TasksService} from '../../providers/tasks-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {TasksService} from '../../providers/tasks-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {TasksService} from '../../providers/tasks-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {TasksService} from '../../providers/tasks-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {TasksService} from '../../providers/tasks-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {TasksService} from '../../providers/tasks-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {TicketsService} from '../../providers/tickets-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {TicketsService} from '../../providers/tickets-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {TicketsService} from '../../providers/tickets-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {TicketsService} from '../../providers/tickets-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {TicketsService} from '../../providers/tickets-service';
+
+            All imports on this line are unused. 
+
+[2m       L3:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L4:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L5:  [22mimport {TicketsService} from '../../providers/tickets-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {UserTicketsService} from '../../providers/userTickets-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {UserTicketsService} from '../../providers/userTickets-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {UserTicketsService} from '../../providers/userTickets-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {UserTicketsService} from '../../providers/userTickets-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {UserTicketsService} from '../../providers/userTickets-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {UserTicketsService} from '../../providers/userTickets-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {UsersService} from '../../providers/users-service';
+
+            All imports on this line are unused. 
+
+[2m       L8:  [22mimport {NeedFulfillmentsService} from '../../providers/needFulfillments-service';
+[2m       L9:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {NeedFulfillmentsModel} from '../../models/needfulfillments.model';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {UsersService} from '../../providers/users-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {UsersService} from '../../providers/users-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L7:  [22mimport {UsersService} from '../../providers/users-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L5:  [22mimport {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L7:  [22mimport {UsersService} from '../../providers/users-service';
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {IonicPage, NavController, NavParams, MenuController} from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L4:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L3:  [22mimport {Storage} from '@ionic/storage';
+[2m       L4:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L5:  [22mimport {AuthService} from '../../providers/auth-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L3:  [22mimport {Storage} from '@ionic/storage';
+[2m       L4:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L5:  [22mimport {AuthService} from '../../providers/auth-service';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {UsersService} from '../../providers/users-service';
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {IonicPage, NavController, NavParams, MenuController} from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L4:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L3:  [22mimport {Storage} from '@ionic/storage';
+[2m       L4:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L5:  [22mimport {AuthService} from '../../providers/auth-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L3:  [22mimport {Storage} from '@ionic/storage';
+[2m       L4:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L5:  [22mimport {AuthService} from '../../providers/auth-service';
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {IonicPage, NavController, NavParams, MenuController} from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {IonicPage, NavController, NavParams, MenuController} from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L4:  [22mimport {Validators, FormBuilder, FormGroup} from '@angular/forms';
+
+            'FormBuilder' is declared but never used. 
+
+[2m       L3:  [22mimport {Storage} from '@ionic/storage';
+[2m       L4:  [22mimport {Validators, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mB[49m[41mu[49m[41mi[49m[41ml[49m[41md[49m[41me[49m[41mr[49m, FormGroup} from '@angular/forms';
+[2m       L5:  [22mimport {AuthService} from '../../providers/auth-service';
+
+            'FormGroup' is declared but never used. 
+
+[2m       L3:  [22mimport {Storage} from '@ionic/storage';
+[2m       L4:  [22mimport {Validators, FormBuilder, [41mF[49m[41mo[49m[41mr[49m[41mm[49m[41mG[49m[41mr[49m[41mo[49m[41mu[49m[41mp[49m} from '@angular/forms';
+[2m       L5:  [22mimport {AuthService} from '../../providers/auth-service';
+
+            All imports on this line are unused. 
+
+[2m       L2:  [22mimport {IonicPage, NavController, NavParams, MenuController} from 'ionic-angular';
+[2m       L3:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+
+            'google' is declared but never used. 
+
+[2m      L10:  [22mdeclare var [41mg[49m[41mo[49m[41mo[49m[41mg[49m[41ml[49m[41me[49m;
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {UsersService} from '../../providers/users-service';
+
+            'ElementRef' is declared but never used. 
+
+[2m       L2:  [22mimport {Component, ViewChild, [41mE[49m[41ml[49m[41me[49m[41mm[49m[41me[49m[41mn[49m[41mt[49m[41mR[49m[41me[49m[41mf[49m} from '@angular/core';
+[2m       L3:  [22mimport {IonicPage, NavController, NavParams, MenuController} from 'ionic-angular';
+
+            All imports on this line are unused. 
+
+[2m       L4:  [22mimport {ProtectedPage} from '../../pages/protected-page/protected-page';
+[2m       L5:  [22m[41mi[49m[41mm[49m[41mp[49m[41mo[49m[41mr[49m[41mt[49m {Storage} from '@ionic/storage';
+[2m       L6:  [22mimport {GroupsService} from '../../providers/groups-service';
+
+[17:23:41]  lint finished in 2.61 s 
+[2K[G
+[2K[G:app:extractTryWithResourcesSupportJarDebug UP-TO-DATE
+[2K[G
+:app:transformClassesWithStackFramesFixerForDebug
+[2K[G UP-TO-DATE
+[2K[G
+:app:transformClassesWithDesugarForDebug
+[2K[G 
+[2K[GUP-TO-DATE
+:app:transformClassesWithDexBuilderForDebug
+[2K[G UP-TO-DATE
+[2K[G
+:app:transformDexArchiveWithExternalLibsDexMergerForDebug
+[2K[G UP-TO-DATE
+[2K[G
+:app:transformDexArchiveWithDexMergerForDebug UP-TO-DATE
+:CordovaLib:compileDebugNdk NO-SOURCE
+[2K[G:CordovaLib:mergeDebugJniLibFolders UP-TO-DATE
+:CordovaLib:transformNativeLibsWithMergeJniLibsForDebug 
+[2K[GUP-TO-DATE
+:CordovaLib:transformNativeLibsWithIntermediateJniLibsForDebug
+[2K[G UP-TO-DATE
+[2K[G:app:mergeDebugJniLibFolders
+[2K[G 
+[2K[GUP-TO-DATE
+[2K[G
+[2K[G:app:transformNativeLibsWithMergeJniLibsForDebug
+[2K[G 
+[2K[GUP-TO-DATE
+:app:processDebugJavaRes NO-SOURCE
+[2K[G
+:app:transformResourcesWithMergeJavaResForDebug
+[2K[G UP-TO-DATE
+:app:validateSigningDebug
+:app:packageDebug
+[2K[G
+[2K[G:app:assembleDebug
+:app:cdvBuildDebug
+[2K[G
+[2K[G
+[2K[GBUILD SUCCESSFUL in 2s
+[2K[G47 actionable tasks: 3 executed, 44 up-to-date
+[2K[GBuilt the following apk(s): 
+	/home/nate/Projects/apps/ionic/csr/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+[2K[G
+[2K[GANDROID_HOME=/home/nate/Android/Sdk
+[2K[GJAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+[2K[Gnone
+[2K[GSkipping build...
+[2K[GBuilt the following apk(s): 
+	/home/nate/Projects/apps/ionic/csr/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+[2K[GUsing apk: /home/nate/Projects/apps/ionic/csr/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+[2K[GPackage name: com.crowdsourcerescue.crowdsourcerescue
+[2K[GLAUNCH SUCCESS
+[2K[G
+[2K[G[OK] Your app has been deployed.
+     Did you know you can live-reload changes from your app with --livereload?
+

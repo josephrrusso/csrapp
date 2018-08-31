@@ -20,6 +20,9 @@
         <button ion-item (click)="viewLocation(nf.need.location.id, nf.need.location.campaign_id)">{{ nf.need.need_type.name }}: {{ nf.need.location.name }}</button>
       </div>
     </div>
+    <div *ngIf="!needFulfillments.length">
+      <i>No active rescues</i>
+    </div>
   </ion-list>
 </ion-content>
 

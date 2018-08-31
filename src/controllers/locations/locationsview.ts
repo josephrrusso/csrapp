@@ -36,6 +36,13 @@ export class LocationsInfoPage extends ProtectedPage {
 
   }
 
+  ionViewCanEnter() {
+    if (this.location_id) {
+      return true;
+    }
+    return false;
+  }
+
   ionViewWillEnter() {
     this.locationsService.view(this.location_id, this.campaign_id)
       .then(location => {

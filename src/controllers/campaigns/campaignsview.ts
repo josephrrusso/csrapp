@@ -139,7 +139,6 @@ export class CampaignsInfoPage extends ProtectedPage {
   }
 
   mapit(campaign_id) {
-    //this.loadMap();
     this.deleteMarkers();
     var el = $("#mapchecks_"+campaign_id);
     var checkedMaps = [];
@@ -210,6 +209,19 @@ export class CampaignsInfoPage extends ProtectedPage {
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
     this.mapLoaded = true
     this.mybounds.extend(latLng);
+
+    // Default maps on
+    for (var m in this.campaign['maps']) {
+      for (var g in this.campaign['maps'][m]['groups']) {
+        var group = this.campaign['maps'][m]['groups'][g];
+        if (group.default == 1) {
+          this.mapitHelper(group);
+        }
+      }
+    }
+
+    // Map it
+    this.mapit(this.campaign.id);
     
     /*
     if (window.navigator.onLine) {

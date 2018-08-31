@@ -35,6 +35,13 @@ export class UsersInfoPage extends ProtectedPage {
     this.campaign_id = navParams.get('campaign_id');
 
   }
+
+  ionViewCanEnter() {
+    if (this.user_id) {
+      return true;
+    }
+    return false;
+  }
   
   ionViewWillEnter() {
     this.usersService.view(this.user_id, this.campaign_id)
