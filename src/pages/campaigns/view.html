@@ -64,6 +64,7 @@
   <div class="container">
     <div *ngIf="campaign">
       <div id="mapchecks_{{campaign.id}}" class="finder">
+        <h4>Select Layers</h4>
         <ion-list>
           <div ion-item *ngFor="let map of campaign.maps">
             <div ion-item no-lines class="toggle" (click)="toggle(map.id)">
@@ -84,7 +85,7 @@
         </ion-list>
       </div>
       <div ion-row style="margin-bottom: 2px;">
-        <button *ngIf="mapLoaded" ion-item no-lines (click)="mapit(campaign.id)" class="mapItButton">Display on Map</button>
+        <button *ngIf="mapLoaded" ion-item no-lines (click)="mapit(campaign.id)" class="mapItButton">Display Layers</button>
       </div>
       
     </div>

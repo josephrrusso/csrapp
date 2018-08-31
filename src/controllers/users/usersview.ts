@@ -39,6 +39,7 @@ export class UsersInfoPage extends ProtectedPage {
   ionViewWillEnter() {
     this.usersService.view(this.user_id, this.campaign_id)
       .then(user => {
+        user.scope = this.campaign_id;
         this.user = user;
       })
       .catch(e => console.log("View users error", e));

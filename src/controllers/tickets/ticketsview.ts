@@ -35,6 +35,7 @@ export class TicketsInfoPage extends ProtectedPage {
   ionViewWillEnter() {
     this.ticketsService.view(this.ticket_id, this.campaign_id)
       .then(ticket => {
+        ticket.scope = this.campaign_id;
         this.ticket = ticket;
       })
       .catch(e => console.log("View tickets error", e));

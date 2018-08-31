@@ -1,0 +1,34 @@
+<div>
+	<div *ngFor="let a of arr" style="margin-bottom: 20px;">
+		<div *ngIf="(a.type=='text')">
+			<label>{{a.name}}</label>
+			<br>
+			<input class='dvinput' [attr.data-dvid]='a.datapoint' name='value_text' />
+		</div>	
+		<div *ngIf="(a.type=='textarea')">
+			<label>{{a.name}}</label>
+			<br>
+			<textarea class='dvinput' [attr.data-dvid]='a.datapoint' name='value_text'></textarea>
+		</div>	
+		<div *ngIf="(a.type=='numeric' || a.type=='number')">
+			<label>{{a.name}}</label>
+			<br>
+			<input class='dvinput' [attr.data-dvid]='a.datapoint' name='value_numeric' />
+		</div>		
+		<div *ngIf="(a.type=='select')">
+			<label>{{a.name}}</label>
+			<br>
+			<select class='dvinput' [attr.data-dvid]='a.datapoint'  name='value_numeric'>
+				<option *ngFor="let o of a.options" value="o.id">{{o.name}}</option>
+			</select>
+		</div>
+		<div *ngIf="(a.type=='boolean')">
+			<label>{{a.name}}</label>
+			<br>
+			<select class='dvinput' [attr.data-dvid]='a.datapoint' name='value_numeric'>
+				<option value="2">Yes</option>
+				<option value="1">No</option>
+			</select>
+		</div>
+	</div>
+</div>

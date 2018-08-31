@@ -31,6 +31,7 @@ import {TasksService} from '../providers/tasks-service';
 import {TicketsService} from '../providers/tickets-service';
 import {UsersService} from '../providers/users-service';
 import {UserTicketsService} from '../providers/userTickets-service';
+import {NeedFulfillmentsService} from '../providers/needFulfillments-service';
 
 import {httpFactory} from "./http.factory";
 import { AlertController } from 'ionic-angular';
@@ -109,7 +110,8 @@ export function createTranslateLoader(http: Http) {
 	NotificationsService,
 	FormsService,
 	TicketsService,
-	UserTicketsService
+	UserTicketsService,
+  NeedFulfillmentsService
   ]
 })
 export class AppModule {}

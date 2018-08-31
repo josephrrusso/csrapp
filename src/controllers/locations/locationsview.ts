@@ -39,6 +39,7 @@ export class LocationsInfoPage extends ProtectedPage {
   ionViewWillEnter() {
     this.locationsService.view(this.location_id, this.campaign_id)
       .then(location => {
+        location.scope = this.campaign_id;
         this.location = location;
       })
       .catch(e => console.log("View users error", e));

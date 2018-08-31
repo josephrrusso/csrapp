@@ -7,7 +7,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>    
     <ion-title *ngIf="ticket">{{ ticket.data.first_name }} {{ ticket.data.last_name }}</ion-title>
-    <ion-buttons end><div class="fa fa-2x fa-bell top-right" (click)="notification()"></div></ion-buttons>
+    <ion-buttons end><div class="fa fa-2x fa-bell top-right" (click)="notification()"></div><div class="fa fa-2x fa-exclamation top-right" (click)="needfulfillments()"></div></ion-buttons>
   </ion-navbar>
 </ion-header>
 <ion-content padding>

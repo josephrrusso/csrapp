@@ -26,10 +26,73 @@
     right: 10%;
     top: 10%
   }
+  .helpbutton {
+  	display: block;
+  	width: 50%;
+  	margin-left: auto;
+  	margin-right: auto;
+  	background-color: orange;
+  	font-weight: bold;
+  	color: white;
+  	text-align: center;
+  }
+  .submitbutton {
+  	display: block;
+  	width: 50%;
+  	margin-left: auto;
+  	margin-right: auto;
+  	background-color: green;
+  	font-weight: bold;
+  	color: white;
+  	text-align: center;
+  }
 </style>
 
 
 <div>
+
+	<ion-card *ngIf="completionmessage">
+		<ion-card-header style="background-color: green;">
+			<h1 style="color:white">Task complete! All records have been saved to the database. </h1>
+		</ion-card-header>
+	</ion-card>
+
+	<ng-container *ngFor="let nf of need_fulfillments">
+		<ion-card>
+			<ion-card-header style="background-color: red;">
+				<h1 style="color:white">You are providing {{ nf.need.need_type.name }}!</h1>
+			</ion-card-header>
+
+			<ion-card-content style='text-align: center; padding-top: 25px;'>
+				<div *ngFor="let psm of nf.pipeline_stage_members">
+					<h1>{{ psm.pipeline_stage.name }}</h1>
+					<hr>
+					<h2>Current Instructions</h2>
+					<p *ngIf="psm.pipeline_stage.directions">{{ psm.pipeline_stage.directions }}</p>
+					<p *ngIf="!psm.pipeline_stage.directions"><i>No Instructions</i></p>
+					<hr style="margin-bottom: 10px; margin-top: 10px;">
+					<div *ngIf="psm.forms && psm.forms.length">
+						<div id="psmhider_{{ psm.id }}" style='display: none'>
+							<form id="psmform_{{ psm.id }}">
+								<div *ngFor="let form of psm.forms">
+									<form-view [form]="form"></form-view>
+								</div>
+							</form>
+							<button ion-item no-lines (click)="submitStage(nf.id, psm)" class="submitbutton">Submit</button>
+						</div>
+						<button id="psmdonebutton_{{ psm.id }}" ion-item no-lines (click)="showForm(psm)" class="submitbutton">I'm Done</button>
+					</div>
+					<div *ngIf="!psm.forms || !psm.forms.length">
+						<form id="psmform_{{ psm.id }}">
+						</form>
+						<button ion-item no-lines (click)="submitStage(nf.id, psm)" class="submitbutton">I'm Done</button>
+					</div>
+				</div>
+			</ion-card-content>
+		</ion-card>
+	</ng-container>
+
+
 	<ion-card>
 		<ion-card-header style="background-color: black;">
 			<h1 *ngIf="entity" style="color:white">{{ entity.data.entity.first_name }} {{ entity.data.entity.last_name }}</h1>
@@ -92,6 +155,9 @@
 							</ion-row>
 							<ion-row>
 								<span style="margin: auto;">Needs {{ need.amount }}</span>
+							</ion-row>
+							<ion-row *ngIf="need.rules && need.rules.assign && need.rules.assign!=0 && !hidebutton[need.data[0].id]">
+								<button ion-item no-lines (click)="addNeedfulfillment(need.data[0].id, need.rules.assign)" class="helpbutton helpbutton_{{need.data[0].id}}">I Can Help</button>
 							</ion-row>
 						</div>
 					</div>

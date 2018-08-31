@@ -49,7 +49,6 @@ export class CampaignsInfoPage extends ProtectedPage {
   }
 
   ionViewCanEnter() {
-    console.log('attempt')
     if (this.campaign) {
       return true;
     }
@@ -58,7 +57,6 @@ export class CampaignsInfoPage extends ProtectedPage {
 
   ionViewDidLoad(){
     this.loadMap();
-    console.log('cv')
 
     /*
     let alert = this.alertCtrl.create({
@@ -199,15 +197,14 @@ export class CampaignsInfoPage extends ProtectedPage {
  
   loadMap() {
 
-    console.log('err');
-    console.log('err');
     let latLng = new google.maps.LatLng(29.35, -95.75);
 
     let mapOptions = {
       center: latLng,
       zoom: 8,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
-      gestureHandling: 'cooperative'
+      //gestureHandling: 'cooperative'
+      gestureHandling: 'greedy'
     }
  
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);

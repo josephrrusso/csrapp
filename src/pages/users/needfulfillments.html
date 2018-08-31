@@ -1,0 +1,25 @@
+
+<style>
+</style>
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>{{ 'page.needFulfillments.list' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list *ngIf="needFulfillments">
+    <div *ngFor="let nf of needFulfillments">
+      <div *ngIf="nf.need && nf.need.ticket && nf.need.ticket.campaign_id">
+        <button ion-item (click)="viewTicket(nf.need.ticket.id, nf.need.ticket.campaign_id)">{{ nf.need.need_type.name }}: {{ nf.need.ticket.first_name }} {{ nf.need.ticket.last_name }}</button>
+      </div>
+      <div *ngIf="nf.need && nf.need.location && nf.need.location.campaign_id">
+        <button ion-item (click)="viewLocation(nf.need.location.id, nf.need.location.campaign_id)">{{ nf.need.need_type.name }}: {{ nf.need.location.name }}</button>
+      </div>
+    </div>
+  </ion-list>
+</ion-content>
+
