@@ -7,6 +7,9 @@ import {TranslateService} from '@ngx-translate/core';
 import {GeoService} from '../providers/geo-service';
 import { AlertController } from 'ionic-angular';
 
+import {Observable} from 'rxjs/Observable';
+import { Subscription } from "rxjs/Subscription";
+
 
 @Component({
   templateUrl: 'app.html'
@@ -50,10 +53,18 @@ export class MyApp {
       this.splashScreen.hide();
       //this.authService.startupTokenRefresh();
 
+      Observable.interval(60000).subscribe(()=>{
+          //this.functionYouWantToCall();
+          this.geoService.geo();
+      });
+
       
+      /*
       setInterval(() => { 
          this.geoService.geo();
-      }, 60000);
+         console.log('app.component')
+      }, 20000);
+      */
       
     });
   }

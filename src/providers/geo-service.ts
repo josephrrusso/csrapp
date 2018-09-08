@@ -21,9 +21,8 @@ export class GeoService {
   }
 
   geo() {
-    this.geolocation.getCurrentPosition().then((position) => {
-
-      return this.http.post(this.cfg.apiUrl + this.route + "/geo", {latitude: position.coords.latitude, longitude: position.coords.longitude})
+    this.geolocation.getCurrentPosition({timeout: 30000, enableHighAccuracy: true, maximumAge: 10}).then((position) => {
+      return this.http.post(this.cfg.apiUrl + this.route + "/geo", {latitude: position.coords.latitude, longitude: position.coords.longitude, notes:'h '+' '+position.coords.accuracy})
       .toPromise()
       .then(() => {
         return true;
@@ -32,16 +31,36 @@ export class GeoService {
 
     }, 
     (err) => {
+      var errors = { 
+        1: 'Permission denied',
+        2: 'Position unavailable',
+        3: 'Request timeout'
+      };
+      //3600000
+      this.geolocation.getCurrentPosition({timeout: 30000, enableHighAccuracy: false, maximumAge: 10}).then((position) => {
+        return this.http.post(this.cfg.apiUrl + this.route + "/geo", {latitude: position.coords.latitude, longitude: position.coords.longitude, notes:'e1 '+JSON.stringify(err)+' '+errors[err.code]+' l '+' '+position.coords.accuracy})
+        .toPromise()
+        .then(() => {
+          return true;
+        })
+        .catch(e => console.log("Geolocation saving error", e));
 
-      /*
-      return this.http.post(this.cfg.apiUrl + this.route + "/geo", {latitude: 0, longitude: 0})
-      .toPromise()
-      .then(() => {
-        return true;
-      })
-      .catch(e => console.log("Geolocation saving error", e));
-      */
-      
+        },
+
+        (err2) => {
+          var errors = { 
+            1: 'Permission denied',
+            2: 'Position unavailable',
+            3: 'Request timeout'
+          };
+
+          return this.http.post(this.cfg.apiUrl + this.route + "/geo", {latitude: 0, longitude: 0, notes:' e2 '+JSON.stringify(err2)+' '+errors[err2.code]})
+          .toPromise()
+          .then(() => {
+            return true;
+          })
+          .catch(e => console.log("Geolocation saving error", e));
+        });
     });
   }
 }
